@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import Navbar from '../components/Navbar';
+import PageContainer from '../components/PageContainer';
 
 export default function Home() {
   return (
     <Fragment>
-      <Navbar />
+      <PageContainer></PageContainer>
     </Fragment>
   );
 }
