@@ -50,38 +50,40 @@ const Navbar = () => {
         <Box>
           <NextLink href='/'>Corey Munn</NextLink>
         </Box>
-        {isLargerThan768 ? (
-          <HStack>
-            <NextLink href='/about' passHref>
-              <Button as='a' variant='ghost' fontWeight='light'>
-                About
-              </Button>
-            </NextLink>
-            <NextLink href='/projects' passHref>
-              <Button as='a' variant='ghost' fontWeight='light'>
-                Projects
-              </Button>
-            </NextLink>
-            <NextLink href='/blog' passHref>
-              <Button as='a' variant='ghost' fontWeight='light'>
-                Blog
-              </Button>
-            </NextLink>
-            <ColorModeSwitch />
-          </HStack>
-        ) : (
-          <HStack>
-            <ColorModeSwitch />
-            <IconButton borderRadius='md'>
-              <HamburgerIcon
-                fontSize='1.5rem'
-                color={hamburgerColor}
-                cursor='pointer'
-                onClick={handleOpen}
-              />
-            </IconButton>
-          </HStack>
-        )}
+
+        {/* shows on big screens */}
+        <HStack display={isLargerThan768 ? 'flex' : 'none'}>
+          <NextLink href='/about' passHref>
+            <Button as='a' variant='ghost' fontWeight='light'>
+              About
+            </Button>
+          </NextLink>
+          <NextLink href='/projects' passHref>
+            <Button as='a' variant='ghost' fontWeight='light'>
+              Projects
+            </Button>
+          </NextLink>
+          <NextLink href='/blog' passHref>
+            <Button as='a' variant='ghost' fontWeight='light'>
+              Blog
+            </Button>
+          </NextLink>
+          <ColorModeSwitch />
+        </HStack>
+
+        {/* shows on small screens */}
+        <HStack display={isLargerThan768 ? 'none' : 'flex'}>
+          <ColorModeSwitch />
+          <IconButton borderRadius='md'>
+            <HamburgerIcon
+              fontSize='1.5rem'
+              color={hamburgerColor}
+              cursor='pointer'
+              onClick={handleOpen}
+            />
+          </IconButton>
+        </HStack>
+
         <Drawer isOpen={isOpen} placement='right' onClose={handleClose}>
           <DrawerOverlay />
           <DrawerContent>
