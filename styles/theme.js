@@ -6,6 +6,11 @@ const overrides = {
     body: 'Roboto, sans-serif',
     heading: 'Roboto, sans-serif',
   },
+  fontWeights: {
+    normal: 300,
+    medium: 500,
+    bold: 700,
+  },
   config: {
     initialColorMode: 'light',
     useSystemColorMode: false,
