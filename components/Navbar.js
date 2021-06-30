@@ -48,7 +48,7 @@ const Navbar = () => {
         alignItems='center'
       >
         <Box>
-          <NextLink href='/'>Corey Munn</NextLink>
+          <NextLink href='/'>CM</NextLink>
         </Box>
 
         {/* shows on big screens */}
