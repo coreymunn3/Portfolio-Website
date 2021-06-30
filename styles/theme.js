@@ -23,6 +23,18 @@ const overrides = {
       },
     }),
   },
+  components: {
+    Text: {
+      variants: {
+        primary: (props) => ({
+          color: mode('gray.800', 'white')(props),
+        }),
+        muted: (props) => ({
+          color: mode('gray.500', 'gray.300')(props),
+        }),
+      },
+    },
+  },
 };
 
 const customTheme = extendTheme(overrides);

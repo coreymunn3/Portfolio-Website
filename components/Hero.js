@@ -6,6 +6,7 @@ import {
   Button,
   Box,
   useColorModeValue,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -19,6 +20,7 @@ import {
 import StaggeredList from './StaggeredList';
 
 const Hero = () => {
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   const svgColor = useColorModeValue('#F56565', '#ED8936');
   return (
     <Box position='relative' mt={[0, 100]}>
@@ -30,9 +32,9 @@ const Hero = () => {
               Corey Munn.
             </Heading>
           </Box>
-          <Text fontSize={['lg', '2xl']}>
+          <Text fontSize={['lg', '2xl']} variant='muted'>
             A self-taught{' '}
-            <Text as='span' fontWeight='bold'>
+            <Text as='span' fontWeight='bold' variant='primary'>
               React Developer
             </Text>{' '}
             who is passionate about web applications and loves to learn.
@@ -46,6 +48,7 @@ const Hero = () => {
             target='_blank'
             leftIcon={<EmailIcon />}
             variant='solid'
+            size={isLargerThan768 ? 'md' : 'sm'}
           >
             Email
           </Button>
@@ -56,6 +59,7 @@ const Hero = () => {
             target='_blank'
             leftIcon={<FaGithub />}
             variant='solid'
+            size={isLargerThan768 ? 'md' : 'sm'}
           >
             Github
           </Button>
@@ -65,6 +69,7 @@ const Hero = () => {
             target='_blank'
             leftIcon={<FaLinkedin />}
             variant='solid'
+            size={isLargerThan768 ? 'md' : 'sm'}
           >
             LinkedIn
           </Button>
