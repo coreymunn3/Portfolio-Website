@@ -23,7 +23,7 @@ const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   const svgColor = useColorModeValue('#F56565', '#ED8936');
   return (
-    <Box position='relative' mt={[0, 100]}>
+    <Box position='relative' mt={[0, 150]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
           <Text fontSize={['lg', '2xl']}>Hello, Nice to Meet You! I'm...</Text>
