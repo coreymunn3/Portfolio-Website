@@ -25,12 +25,13 @@ const overrides = {
   },
   components: {
     Text: {
+      baseStyle: (props) => ({
+        fontWeight: 'normal',
+        color: mode('gray.500', 'gray.300')(props),
+      }),
       variants: {
-        primary: (props) => ({
+        lead: (props) => ({
           color: mode('gray.800', 'white')(props),
-        }),
-        muted: (props) => ({
-          color: mode('gray.500', 'gray.300')(props),
         }),
       },
     },

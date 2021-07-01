@@ -26,15 +26,17 @@ const Hero = () => {
     <Box position='relative' mt={[0, 150]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['lg', '2xl']}>Hello, Nice to Meet You! I'm...</Text>
+          <Text fontSize={['lg', '2xl']} variant='lead'>
+            Hello, Nice to Meet You! I'm...
+          </Text>
           <Box mb={8}>
             <Heading as='h1' fontSize={['5xl', '8xl']} mb={8}>
               Corey Munn.
             </Heading>
           </Box>
-          <Text fontSize={['lg', '2xl']} variant='muted'>
+          <Text fontSize={['lg', '2xl']}>
             A self-taught{' '}
-            <Text as='span' fontWeight='bold' variant='primary'>
+            <Text as='span' fontWeight='bold' variant='lead'>
               React Developer
             </Text>{' '}
             who is passionate about web applications and loves to learn.

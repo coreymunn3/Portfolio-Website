@@ -6,7 +6,7 @@ const AboutMe = () => {
       <Flex direction={['column', 'row']} w='100%'>
         <Stack maxW={['100%', '60%']}>
           <Heading size='2xl'>About Me</Heading>
-          <Text variant='muted'>
+          <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
             consectetur nulla. Integer sit amet odio ante. Etiam dolor metus,
             tristique dapibus dui eget, tincidunt dictum urna. Cras id ante sed
@@ -16,7 +16,7 @@ const AboutMe = () => {
             lacus, non auctor metus leo quis neque. Sed et tincidunt nibh. Etiam
             vitae erat in elit posuere convallis eget vel ligula.
           </Text>
-          <Text variant='muted'>
+          <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
             consectetur nulla. Integer sit amet odio ante. Etiam dolor metus,
             tristique dapibus dui eget, tincidunt dictum urna.
