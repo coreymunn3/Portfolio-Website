@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Fragment>
       <PageContainer>
-        <Stack spacing={[24, 96]}>
+        <Stack spacing={[24, 40]}>
           <Hero />
           <AboutMe />
         </Stack>

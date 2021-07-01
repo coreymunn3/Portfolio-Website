@@ -23,18 +23,18 @@ const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   const svgColor = useColorModeValue('#F56565', '#ED8936');
   return (
-    <Box position='relative' mt={[0, 150]}>
+    <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['lg', '2xl']} variant='lead'>
-            Hello, Nice to Meet You! I'm...
+          <Text fontSize={['md', '2xl']} variant='lead'>
+            Hello, my name is
           </Text>
           <Box mb={8}>
             <Heading as='h1' fontSize={['5xl', '8xl']} mb={8}>
               Corey Munn.
             </Heading>
           </Box>
-          <Text fontSize={['lg', '2xl']}>
+          <Text fontSize={['md', '2xl']} lineHeight='tall'>
             A self-taught{' '}
             <Text as='span' fontWeight='bold' variant='lead'>
               React Developer
@@ -78,6 +78,7 @@ const Hero = () => {
         </HStack>
 
         <StaggeredList
+          fontSize={['md', 'lg']}
           staggerDuration={0.2}
           childDuration={1}
           items={[
