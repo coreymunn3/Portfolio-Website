@@ -5,6 +5,7 @@ import {
   Heading,
   Button,
   Box,
+  Flex,
   useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react';
@@ -18,6 +19,7 @@ import {
   SiNodeDotJs,
 } from 'react-icons/si';
 import StaggeredList from './StaggeredList';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
@@ -26,7 +28,7 @@ const Hero = () => {
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['md', '2xl']} variant='lead'>
+          <Text fontSize={['lg', '2xl']} color='black'>
             Hello, my name is
           </Text>
           <Box mb={8}>
@@ -34,13 +36,39 @@ const Hero = () => {
               Corey Munn.
             </Heading>
           </Box>
-          <Text fontSize={['md', '2xl']} lineHeight='tall'>
+          {/* <Text fontSize={['md', '2xl']} lineHeight='tall'>
             A self-taught{' '}
             <Text as='span' fontWeight='bold' variant='lead'>
               React Developer
             </Text>{' '}
             who is passionate about web applications and loves to learn.
-          </Text>
+          </Text> */}
+          <Flex direction='row'>
+            <Text fontSize={['lg', '2xl']}>I am a &nbsp;</Text>
+            <Text as='span' fontSize={['lg', '2xl']} variant='lead'>
+              <Typewriter
+                options={{
+                  delay: 50,
+                  skipAddStyles: true,
+                  loop: true,
+                  deleteSpeed: 20,
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('React Developer.')
+                    .pauseFor(2000)
+                    .deleteChars(16)
+                    .typeString('Data Visualization Expert.')
+                    .pauseFor(2000)
+                    .deleteChars(26)
+                    .typeString('Tableau Dashboard Developer.')
+                    .pauseFor(2000)
+                    .deleteChars(28)
+                    .start();
+                }}
+              />
+            </Text>
+          </Flex>
         </Stack>
 
         <HStack>

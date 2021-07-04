@@ -6,7 +6,7 @@ const AboutMe = () => {
     <SlideIntoView direction='fromBottom'>
       <Box>
         <Flex direction={['column', 'row']} w='100%'>
-          <Stack maxW={['100%', '60%']}>
+          <Stack maxW={['100%', '50%']}>
             <Heading fontSize='2xl'>About Me</Heading>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
@@ -25,14 +25,7 @@ const AboutMe = () => {
             </Text>
           </Stack>
           <Flex justifyContent='center' alignItems='flex-start' w='100%' mt={4}>
-            {/* <Image
-              borderRadius='full'
-              objectFit='cover'
-              w={250}
-              h={250}
-              src='/images/headshot.jpg'
-              alt='corey munn'
-            /> */}
+            {/* https://isotropic.co/making-blob-images/ */}
             <svg viewBox='25 0 193 190' xmlns='http://www.w3.org/2000/svg'>
               <defs>
                 <clipPath id='user-space' clipPathUnits='userSpaceOnUse'>

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const SlideIntoView = ({ children, direction, pctVisibleThreshold }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: pctVisibleThreshold ? pctVisibleThreshold : 0.3,
+    threshold: pctVisibleThreshold ? pctVisibleThreshold : 0.35,
   });
 
   useEffect(() => {

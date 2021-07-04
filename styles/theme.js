@@ -32,6 +32,7 @@ const overrides = {
       variants: {
         lead: (props) => ({
           color: mode('gray.800', 'white')(props),
+          fontWeight: 'bold',
         }),
       },
     },
