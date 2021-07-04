@@ -36,13 +36,6 @@ const Hero = () => {
               Corey Munn.
             </Heading>
           </Box>
-          {/* <Text fontSize={['md', '2xl']} lineHeight='tall'>
-            A self-taught{' '}
-            <Text as='span' fontWeight='bold' variant='lead'>
-              React Developer
-            </Text>{' '}
-            who is passionate about web applications and loves to learn.
-          </Text> */}
           <Flex direction='row'>
             <Text fontSize={['lg', '2xl']}>I am a &nbsp;</Text>
             <Text as='span' fontSize={['lg', '2xl']} variant='lead'>
