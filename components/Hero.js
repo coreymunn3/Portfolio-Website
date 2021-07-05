@@ -28,9 +28,7 @@ const Hero = () => {
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['lg', '2xl']} color='black'>
-            Hello, my name is
-          </Text>
+          <Text fontSize={['lg', '2xl']}>Hello, my name is</Text>
           <Box mb={8}>
             <Heading as='h1' fontSize={['5xl', '8xl']} mb={8}>
               Corey Munn.
@@ -120,7 +118,7 @@ const Hero = () => {
               icon: <SiTypescript />,
             },
             {
-              text: 'Learning Amazon Web Services',
+              text: 'Exploring Serverless with AWS',
               icon: <SiAmazonaws />,
             },
           ]}

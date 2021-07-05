@@ -31,6 +31,8 @@ const Navbar = () => {
   const handleOpen = () => {
     setIsOpen(true);
   };
+
+  const navLinks = ['Resume', 'Projects', 'Blog'];
   return (
     <Box
       zIndex='10'
@@ -53,21 +55,14 @@ const Navbar = () => {
 
         {/* shows on big screens */}
         <HStack display={isLargerThan768 ? 'flex' : 'none'}>
-          <NextLink href='/about' passHref>
-            <Button as='a' variant='ghost' fontWeight='light'>
-              About
-            </Button>
-          </NextLink>
-          <NextLink href='/projects' passHref>
-            <Button as='a' variant='ghost' fontWeight='light'>
-              Projects
-            </Button>
-          </NextLink>
-          <NextLink href='/blog' passHref>
-            <Button as='a' variant='ghost' fontWeight='light'>
-              Blog
-            </Button>
-          </NextLink>
+          {navLinks.map((navLink) => (
+            <NextLink href='/about' passHref>
+              <Button as='a' variant='ghost' fontWeight='light'>
+                {navLink}
+              </Button>
+            </NextLink>
+          ))}
+
           <ColorModeSwitch />
         </HStack>
 
@@ -102,21 +97,13 @@ const Navbar = () => {
                 justifyContent='space-between'
               >
                 <VStack>
-                  <NextLink href='/about' passHref>
-                    <Button as='a' variant='ghost' fontWeight='light' w='100%'>
-                      About
-                    </Button>
-                  </NextLink>
-                  <NextLink href='/projects' passHref>
-                    <Button as='a' variant='ghost' fontWeight='light' w='100%'>
-                      Projects
-                    </Button>
-                  </NextLink>
-                  <NextLink href='/blog' passHref>
-                    <Button as='a' variant='ghost' fontWeight='light' w='100%'>
-                      Blog
-                    </Button>
-                  </NextLink>
+                  {navLinks.map((navLink) => (
+                    <NextLink href='/about' passHref>
+                      <Button as='a' variant='ghost' fontWeight='light'>
+                        {navLink}
+                      </Button>
+                    </NextLink>
+                  ))}
                 </VStack>
                 <Box>
                   <Button variant='link' fontWeight='light' w='100%'>
