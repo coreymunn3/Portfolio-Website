@@ -56,7 +56,7 @@ const Navbar = () => {
         {/* shows on big screens */}
         <HStack display={isLargerThan768 ? 'flex' : 'none'}>
           {navLinks.map((navLink) => (
-            <NextLink href='/about' passHref>
+            <NextLink key={navLink} href='/about' passHref>
               <Button as='a' variant='ghost' fontWeight='light'>
                 {navLink}
               </Button>
@@ -98,7 +98,7 @@ const Navbar = () => {
               >
                 <VStack>
                   {navLinks.map((navLink) => (
-                    <NextLink href='/about' passHref>
+                    <NextLink key={navLink} href='/about' passHref>
                       <Button as='a' variant='ghost' fontWeight='light'>
                         {navLink}
                       </Button>

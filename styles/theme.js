@@ -24,6 +24,20 @@ const overrides = {
     }),
   },
   components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: 'medium',
+      },
+      variants: {
+        title: {
+          fontWeight: 'bold',
+          fontSize: '5xl',
+        },
+        subtitle1: {
+          fontSize: '2xl',
+        },
+      },
+    },
     Text: {
       baseStyle: (props) => ({
         fontWeight: 'normal',
@@ -32,7 +46,6 @@ const overrides = {
       variants: {
         lead: (props) => ({
           color: mode('gray.800', 'white')(props),
-          fontWeight: 'bold',
         }),
       },
     },

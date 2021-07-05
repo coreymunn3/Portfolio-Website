@@ -7,7 +7,7 @@ const AboutMe = () => {
       <Box>
         <Flex direction={['column', 'row']} w='100%'>
           <Stack maxW={['100%', '50%']}>
-            <Heading fontSize='2xl'>About Me</Heading>
+            <Heading variant='subtitle1'>About Me</Heading>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
               consectetur nulla. Integer sit amet odio ante. Etiam dolor metus,

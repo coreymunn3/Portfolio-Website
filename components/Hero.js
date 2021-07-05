@@ -52,7 +52,7 @@ const Hero = () => {
                     .typeString('Data Visualization Expert.')
                     .pauseFor(2000)
                     .deleteChars(26)
-                    .typeString('Tableau Dashboard Developer.')
+                    .typeString('Tableau Developer.')
                     .pauseFor(2000)
                     .deleteChars(28)
                     .start();
