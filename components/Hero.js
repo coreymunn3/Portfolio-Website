@@ -30,7 +30,7 @@ const Hero = () => {
         <Stack spacing={0}>
           <Text fontSize={['lg', '2xl']}>Hello, my name is</Text>
           <Box mb={8}>
-            <Heading as='h1' fontSize={['5xl', '8xl']} mb={8}>
+            <Heading as='h1' fontSize={['5xl', '8xl']} mb={8} variant='title'>
               Corey Munn.
             </Heading>
           </Box>

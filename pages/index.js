@@ -31,9 +31,27 @@ export async function getStaticProps() {
     content_type: 'timeline',
   });
 
+  // format the response
+  const formattedTimelineData = {
+    2018: [],
+    2019: [],
+    2020: [],
+    2021: [],
+  };
+  for (let key in formattedTimelineData) {
+    formattedTimelineData[key] = res.items
+      .filter(
+        (event) =>
+          new Date(event.fields.eventDate).getFullYear() === parseInt(key)
+      )
+      .sort((a, b) => {
+        return new Date(b.fields.eventDate) - new Date(a.fields.eventDate);
+      });
+  }
+
   return {
     props: {
-      timelineData: res.items,
+      timelineData: formattedTimelineData,
     },
   };
 }

@@ -5,12 +5,15 @@ const TimelineSection = ({ year, timelineEvents }) => {
   return (
     <Stack>
       <Divider></Divider>
-      <Text as='h3'>{year}</Text>
+      <Text as='h3' fontWeight='bold'>
+        {year}
+      </Text>
       {timelineEvents.map((event, idx) => (
         <TimelineSectionEvent
           event={event}
           key={idx}
-          direction={idx % 2 === 0 ? 'fromLeft' : 'fromRight'}
+          // direction={idx % 2 === 0 ? 'fromLeft' : 'fromRight'}
+          direction={'fromRight'}
         />
       ))}
     </Stack>
