@@ -8,6 +8,7 @@ const StaggeredList = ({
   items,
   staggerDuration,
   childDuration,
+  delay = 0,
   ...otherProps
 }) => {
   const listVariants = {
@@ -17,6 +18,7 @@ const StaggeredList = ({
     visible: {
       opacity: 1,
       transition: {
+        delay: delay,
         when: 'beforeChildren',
         staggerChildren: staggerDuration,
       },
