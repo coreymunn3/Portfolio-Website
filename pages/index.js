@@ -5,9 +5,10 @@ import PageContainer from '../components/PageContainer';
 import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Timeline from '../components/Timeline';
+import Projects from '../components/Projects';
 import { createClient } from 'contentful';
 export default function Home(props) {
-  const { timelineData } = props;
+  const { timelineData, projectData } = props;
   return (
     <Fragment>
       <PageContainer>
@@ -15,6 +16,7 @@ export default function Home(props) {
           <Hero />
           <AboutMe />
           <Timeline timelineData={timelineData} />
+          <Projects projectData={projectData} />
         </Stack>
       </PageContainer>
     </Fragment>
@@ -27,8 +29,12 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const res = await client.getEntries({
+  const timelineContent = await client.getEntries({
     content_type: 'timeline',
+  });
+
+  const projectContent = await client.getEntries({
+    content_type: 'projects',
   });
 
   // format the response
@@ -39,7 +45,7 @@ export async function getStaticProps() {
     2021: [],
   };
   for (let key in formattedTimelineData) {
-    formattedTimelineData[key] = res.items
+    formattedTimelineData[key] = timelineContent.items
       .filter(
         (event) =>
           new Date(event.fields.eventDate).getFullYear() === parseInt(key)
@@ -52,6 +58,7 @@ export async function getStaticProps() {
   return {
     props: {
       timelineData: formattedTimelineData,
+      projectData: projectContent.items,
     },
   };
 }

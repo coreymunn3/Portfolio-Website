@@ -46,6 +46,7 @@ const Hero = () => {
                 }}
                 onInit={(typewriter) => {
                   typewriter
+                    .pauseFor(1000)
                     .typeString('React Developer.')
                     .pauseFor(2000)
                     .deleteChars(16)
