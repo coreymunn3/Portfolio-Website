@@ -53,31 +53,31 @@ const Navbar = () => {
           <NextLink href='/'>CM</NextLink>
         </Box>
 
-        {/* shows on big screens */}
-        <HStack display={isLargerThan768 ? 'flex' : 'none'}>
-          {navLinks.map((navLink) => (
-            <NextLink key={navLink} href='/about' passHref>
-              <Button as='a' variant='ghost' fontWeight='light'>
-                {navLink}
-              </Button>
-            </NextLink>
-          ))}
+        {isLargerThan768 ? (
+          <HStack>
+            {navLinks.map((navLink) => (
+              <NextLink key={navLink} href='/about' passHref>
+                <Button as='a' variant='ghost' fontWeight='light'>
+                  {navLink}
+                </Button>
+              </NextLink>
+            ))}
 
-          <ColorModeSwitch />
-        </HStack>
-
-        {/* shows on small screens */}
-        <HStack display={isLargerThan768 ? 'none' : 'flex'}>
-          <ColorModeSwitch />
-          <IconButton borderRadius='md'>
-            <HamburgerIcon
-              fontSize='1.5rem'
-              color={hamburgerColor}
-              cursor='pointer'
-              onClick={handleOpen}
-            />
-          </IconButton>
-        </HStack>
+            <ColorModeSwitch />
+          </HStack>
+        ) : (
+          <HStack>
+            <ColorModeSwitch />
+            <IconButton borderRadius='md'>
+              <HamburgerIcon
+                fontSize='1.5rem'
+                color={hamburgerColor}
+                cursor='pointer'
+                onClick={handleOpen}
+              />
+            </IconButton>
+          </HStack>
+        )}
 
         <Drawer isOpen={isOpen} placement='right' onClose={handleClose}>
           <DrawerOverlay />
