@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
 import { mode } from '@chakra-ui/theme-tools';
 
 const overrides = {
@@ -11,6 +12,12 @@ const overrides = {
     medium: 500,
     bold: 700,
   },
+  breakpoints: createBreakpoints({
+    sm: '48em',
+    md: '62em',
+    lg: '80em',
+    xl: '80em',
+  }),
   config: {
     initialColorMode: 'light',
     useSystemColorMode: false,

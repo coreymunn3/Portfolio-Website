@@ -6,76 +6,107 @@ import {
   Text,
   Image,
   Tag,
+  Divider,
+  Link,
   IconButton,
   useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { IoLogoGithub } from 'react-icons/io5';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ project }) => {
-  const svgColor = useColorModeValue('#F56565', '#ED8936');
+  const {
+    githubLink,
+    siteLink,
+    isFeaturedProject,
+    title,
+    description,
+    previewImage,
+    techStack,
+  } = project.fields;
+
+  // const svgColor = useColorModeValue('#F56565', '#ED8936');
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
+
+  const Tags = techStack.map((item) => (
+    <Tag key={item} size='sm' p={2} mr={1} mb={1}>
+      {item}
+    </Tag>
+  ));
+
   return (
     <Box>
       <Flex
         direction={['column', 'row']}
-        transition='all 0.5s ease'
         position='relative'
+        transition='all 0.5s ease'
       >
-        <Box flex={1} position='relative' zIndex={1} _hover={{ zIndex: 3 }}>
-          <Box
-            position='absolute'
-            top={0}
-            left={0}
-            bgColor='rgba(0,0,0,0.4)'
-            h={'100%'}
-            w={'100%'}
-            borderRadius='xl'
-            _hover={{ bgColor: 'rgba(0,0,0,0)' }}
-            transition='all 0.3s ease'
-          ></Box>
+        <Box flex={1}>
           <Image
-            src={project.fields.previewImage.fields.file.url}
-            alt={project.fields.title}
+            src={previewImage.fields.file.url}
+            alt={title}
             borderRadius='xl'
             objectFit='cover'
           />
         </Box>
-        <Box w={['100%', '30%']} position='relative' zIndex={2} h={100}>
-          <Box position='absolute' top={0} right={0} w='100%'>
-            <Box position='relative' zIndex={2} p={2} h={100}>
-              <Stack>
-                <Heading textAlign={['left', 'right']} variant='subtitle2'>
-                  {project.fields.title}
-                </Heading>
-                <Flex justifyContent={['flex-start', 'flex-end']}>
-                  <IconButton variant='ghost' mr={2} icon={<IoLogoGithub />} />
-                  <IconButton variant='ghost' icon={<ExternalLinkIcon />} />
-                </Flex>
-              </Stack>
-            </Box>
-
-            <Box
-              position='absolute'
-              top={[-55, 20]}
-              right={['43%', -10]}
-              w={[200, 350]}
+        <Box w={['100%', '30%']} position='relative'>
+          <Stack p={2}>
+            <Flex
+              direction={['row', 'column']}
+              alignItems={['center', 'flex-end']}
             >
-              {isLargerThan768 && (
-                <Box position='absolute' top={0} left={-3} p={14} mr={4}>
-                  <Stack>
-                    <Text>{project.fields.projectDescription}</Text>
-                    <Flex flexWrap='wrap'>
-                      {project.fields.techStack.map((item) => (
-                        <Tag key={item} size='sm' p={2} mr={1} mb={1}>
-                          {item}
-                        </Tag>
-                      ))}
-                    </Flex>
-                  </Stack>
-                </Box>
-              )}
+              <Heading
+                flex={1}
+                textAlign={['left', 'right']}
+                variant='subtitle2'
+              >
+                {title}
+              </Heading>
+              <Flex justifyContent={['flex-start', 'flex-end']}>
+                {githubLink && (
+                  <Link
+                    href={githubLink}
+                    isExternal
+                    target='_blank'
+                    p={2}
+                    _hover={{ color: 'red.500' }}
+                  >
+                    <FaGithub size={'1.3rem'} />
+                  </Link>
+                )}
+                {siteLink && (
+                  <Link
+                    href={siteLink}
+                    isExternal
+                    target='_blank'
+                    p={2}
+                    _hover={{ color: 'red.500' }}
+                  >
+                    <FaExternalLinkAlt size={'1.2rem'} />
+                  </Link>
+                )}
+              </Flex>
+            </Flex>
+            {/* on small screens show desc & tags below the title */}
+            {!isLargerThan768 && (
+              <Stack>
+                <Flex flexWrap='wrap'>{Tags}</Flex>
+                <Divider />
+                <Text>{description}</Text>
+              </Stack>
+            )}
+          </Stack>
+
+          {/* on large screens, show desc and tags in an SVG blob off to the side */}
+          {isLargerThan768 && (
+            <Box position='absolute' top={20} right={-10} w={350}>
+              <Box position='absolute' top={0} left={-3} p={14} mr={4}>
+                <Stack>
+                  <Text>{description}</Text>
+                  <Divider />
+                  <Flex flexWrap='wrap'>{Tags}</Flex>
+                </Stack>
+              </Box>
 
               <svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'>
                 <path
@@ -85,7 +116,8 @@ const ProjectCard = ({ project }) => {
                 />
               </svg>
             </Box>
-          </Box>
+          )}
+          {/* end large screens */}
         </Box>
       </Flex>
     </Box>
