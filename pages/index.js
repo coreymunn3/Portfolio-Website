@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
 import { Stack } from '@chakra-ui/react';
-import PageContainer from '../components/PageContainer';
 import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Timeline from '../components/Timeline';
@@ -12,15 +11,13 @@ export default function Home(props) {
   const { timelineData, projectData } = props;
   return (
     <Fragment>
-      <PageContainer>
-        <Stack spacing={[24, 40]}>
-          <Hero />
-          <AboutMe />
-          <Timeline timelineData={timelineData} />
-          <Projects projectData={projectData} />
-          <Contact />
-        </Stack>
-      </PageContainer>
+      <Stack spacing={[24, 40]}>
+        <Hero />
+        <AboutMe />
+        <Timeline timelineData={timelineData} />
+        <Projects projectData={projectData} />
+        <Contact />
+      </Stack>
     </Fragment>
   );
 }
