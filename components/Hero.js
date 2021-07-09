@@ -28,7 +28,9 @@ const Hero = () => {
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['lg', '2xl']}>Hello, my name is</Text>
+          <Text fontSize={['lg', '2xl']} textAlign='right'>
+            Hello, my name is
+          </Text>
           <Box mb={8}>
             <Heading as='h1' fontSize={['5xl', '8xl']} mb={8} variant='title'>
               Corey Munn.
@@ -50,12 +52,12 @@ const Hero = () => {
                     .typeString('React Developer.')
                     .pauseFor(2000)
                     .deleteChars(16)
-                    .typeString('Data Visualization Expert.')
-                    .pauseFor(2000)
-                    .deleteChars(26)
                     .typeString('Tableau Developer.')
                     .pauseFor(2000)
                     .deleteChars(28)
+                    .typeString('Data Viz Enthusiast.')
+                    .pauseFor(2000)
+                    .deleteChars(26)
                     .start();
                 }}
               />

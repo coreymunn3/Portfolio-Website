@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Timeline from '../components/Timeline';
 import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 import { createClient } from 'contentful';
 export default function Home(props) {
   const { timelineData, projectData } = props;
@@ -17,6 +18,7 @@ export default function Home(props) {
           <AboutMe />
           <Timeline timelineData={timelineData} />
           <Projects projectData={projectData} />
+          <Contact />
         </Stack>
       </PageContainer>
     </Fragment>

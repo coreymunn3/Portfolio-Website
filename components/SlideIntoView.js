@@ -2,7 +2,13 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-const SlideIntoView = ({ children, direction, pctVisibleThreshold }) => {
+const SlideIntoView = ({
+  children,
+  direction,
+  delay,
+  duration,
+  pctVisibleThreshold,
+}) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: pctVisibleThreshold ? pctVisibleThreshold : 0.35,
@@ -19,18 +25,18 @@ const SlideIntoView = ({ children, direction, pctVisibleThreshold }) => {
   switch (direction) {
     case 'fromTop':
       xStart = 0;
-      yStart = -25;
+      yStart = -20;
       break;
     case 'fromBottom':
       xStart = 0;
-      yStart = 25;
+      yStart = 20;
       break;
     case 'fromLeft':
-      xStart = -25;
+      xStart = -20;
       yStart = 0;
       break;
     case 'fromRight':
-      xStart = 25;
+      xStart = 20;
       yStart = 0;
       break;
   }
@@ -46,8 +52,8 @@ const SlideIntoView = ({ children, direction, pctVisibleThreshold }) => {
       y: 0,
       x: 0,
       transition: {
-        delay: 0.3,
-        duration: 0.3,
+        delay: delay ? delay : 0.3,
+        duration: duration ? duration : 0.3,
       },
     },
   };

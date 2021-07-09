@@ -3,7 +3,7 @@ import SlideIntoView from './SlideIntoView';
 import ProjectCard from './ProjectCard';
 
 const Projects = ({ projectData }) => {
-  console.log(projectData);
+  // console.log(projectData);
   const featuredProjects = projectData.filter(
     (project) => project.fields.isFeaturedProject === true
   );

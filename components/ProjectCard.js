@@ -103,7 +103,6 @@ const ProjectCard = ({ project }) => {
               <Box position='absolute' top={0} left={-3} p={14} mr={4}>
                 <Stack>
                   <Text>{description}</Text>
-                  <Divider />
                   <Flex flexWrap='wrap'>{Tags}</Flex>
                 </Stack>
               </Box>
