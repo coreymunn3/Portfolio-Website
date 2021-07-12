@@ -32,7 +32,7 @@ const Navbar = () => {
     setIsOpen(true);
   };
 
-  const navLinks = ['Resume', 'Projects', 'Blog'];
+  const navLinks = ['resume', 'projects', 'blog'];
   return (
     <Box
       zIndex='10'
@@ -56,7 +56,7 @@ const Navbar = () => {
         {isLargerThan768 ? (
           <HStack>
             {navLinks.map((navLink) => (
-              <NextLink key={navLink} href='/about' passHref>
+              <NextLink key={navLink} href={`/${navLink}`} passHref>
                 <Button as='a' variant='ghost' fontWeight='light'>
                   {navLink}
                 </Button>
@@ -98,7 +98,7 @@ const Navbar = () => {
               >
                 <VStack>
                   {navLinks.map((navLink) => (
-                    <NextLink key={navLink} href='/about' passHref>
+                    <NextLink key={navLink} href={`/${navLink}`} passHref>
                       <Button as='a' variant='ghost' fontWeight='light'>
                         {navLink}
                       </Button>

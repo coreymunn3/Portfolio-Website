@@ -38,13 +38,13 @@ const overrides = {
       variants: {
         title: {
           fontWeight: 'bold',
-          fontSize: '5xl',
+          fontSize: ['3xl', '5xl', '5xl'],
         },
         subtitle1: {
-          fontSize: '3xl',
+          fontSize: ['2xl', '3xl', '3xl'],
         },
         subtitle2: {
-          fontSize: 'xl',
+          fontSize: ['lg', 'xl', 'xl'],
         },
       },
     },

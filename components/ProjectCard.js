@@ -8,8 +8,6 @@ import {
   Tag,
   Divider,
   Link,
-  IconButton,
-  useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
@@ -41,7 +39,21 @@ const ProjectCard = ({ project }) => {
         position='relative'
         transition='all 0.5s ease'
       >
-        <Box flex={1}>
+        <Box flex={1} position='relative'>
+          {isLargerThan768 && (
+            <Box
+              position='absolute'
+              top={0}
+              left={0}
+              width='100%'
+              height='100%'
+              bgColor='rgba(0,0,0,0.5)'
+              borderRadius='xl'
+              transition='background 0.3s ease-in-out'
+              _hover={{ bgColor: 'rgba(0,0,0,0)' }}
+            ></Box>
+          )}
+
           <Image
             src={previewImage.fields.file.url}
             alt={title}
