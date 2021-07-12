@@ -4,7 +4,7 @@ import { Stack } from '@chakra-ui/react';
 import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Timeline from '../components/Timeline';
-import Projects from '../components/Projects';
+import FeaturedProjects from '../components/FeaturedProjects';
 import Contact from '../components/Contact';
 import { createClient } from 'contentful';
 export default function Home(props) {
@@ -15,7 +15,7 @@ export default function Home(props) {
         <Hero />
         <AboutMe />
         <Timeline timelineData={timelineData} />
-        <Projects projectData={projectData} />
+        <FeaturedProjects projectData={projectData} />
         <Contact />
       </Stack>
     </Fragment>

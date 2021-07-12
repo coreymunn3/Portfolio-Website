@@ -1,12 +1,21 @@
-import { Stack, Box, Heading, Text, Link } from '@chakra-ui/react';
+import {
+  Stack,
+  Box,
+  Heading,
+  Text,
+  Link,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import SlideIntoView from './SlideIntoView';
 import ProjectCard from './ProjectCard';
+import ProjectCardLarge from './ProjectCardLarge';
 
-const Projects = ({ projectData }) => {
+const FeaturedProjects = ({ projectData }) => {
   // console.log(projectData);
   const featuredProjects = projectData.filter(
     (project) => project.fields.isFeaturedProject === true
   );
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   return (
     <SlideIntoView pctVisibleThreshold='0.1' direction='fromBottom'>
       <Stack spacing={8}>
@@ -20,7 +29,11 @@ const Projects = ({ projectData }) => {
         <Stack spacing={28}>
           {featuredProjects.map((project) => (
             <SlideIntoView key={project.sys.id} direction='fromBottom'>
-              <ProjectCard project={project} />
+              {isLargerThan768 ? (
+                <ProjectCardLarge project={project} />
+              ) : (
+                <ProjectCard project={project} />
+              )}
             </SlideIntoView>
           ))}
         </Stack>
@@ -29,4 +42,4 @@ const Projects = ({ projectData }) => {
   );
 };
 
-export default Projects;
+export default FeaturedProjects;
