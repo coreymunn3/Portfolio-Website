@@ -3,16 +3,13 @@ import ProjectCard from './ProjectCard';
 import SlideIntoView from './SlideIntoView';
 
 const ProjectGrid = ({ projects }) => {
-  console.log(projects);
   return (
     <Grid templateColumns={['1fr', 'repeat(2, 1fr)']} gap={16}>
       {/* first grid-item contains the heading area */}
       <GridItem position='relative' h='250px' borderRadius='xl'>
-        <Box position='relative' zIndex={2} p={4} mr={8}>
+        <Box position='relative' zIndex={2} p={[8, 4]} mr={8}>
           <Heading variant='title'>My Projects</Heading>
-          <Text>
-            Just a short description of these projects and why they're here
-          </Text>
+          <Text>Just a short description of these projects</Text>
         </Box>
         <Box
           position='absolute'
@@ -40,9 +37,9 @@ const ProjectGrid = ({ projects }) => {
         </Box>
       </GridItem>
       {projects.map((project, idx) => (
-        <GridItem colSpan={1} rowSpan={2}>
+        <GridItem key={project.sys.id} colSpan={1} rowSpan={2}>
           <SlideIntoView direction='fromBottom'>
-            <ProjectCard key={project.sys.id} project={project} />
+            <ProjectCard project={project} />
           </SlideIntoView>
         </GridItem>
       ))}
