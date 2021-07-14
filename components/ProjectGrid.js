@@ -4,17 +4,21 @@ import SlideIntoView from './SlideIntoView';
 
 const ProjectGrid = ({ projects }) => {
   return (
-    <Grid templateColumns={['1fr', 'repeat(2, 1fr)']} gap={16}>
+    <Grid templateColumns={['1fr', 'repeat(2, 1fr)']} gap={[8, 16]}>
       {/* first grid-item contains the heading area */}
-      <GridItem position='relative' h='250px' borderRadius='xl'>
-        <Box position='relative' zIndex={2} p={[8, 4]} mr={8}>
-          <Heading variant='title'>My Projects</Heading>
-          <Text>Just a short description of these projects</Text>
+      <GridItem position='relative' h={['200px', '250px']} borderRadius='xl'>
+        <Box position='relative' zIndex={2} p={[8, 4]} mt={[0, 4]}>
+          <Heading variant='title' textAlign='center'>
+            My Projects
+          </Heading>
+          <Text textAlign='center' maxW={['200px', '100%']} margin='auto'>
+            Check out what I have created.
+          </Text>
         </Box>
         <Box
           position='absolute'
-          top={-5}
-          left={[-5, -10]}
+          top={[-10, -12]}
+          left={[-10, -10]}
           zIndex={1}
           w='120%'
           h='120%'
@@ -30,8 +34,8 @@ const ProjectGrid = ({ projects }) => {
           >
             <path
               fill='#FF0066'
-              d='M42,-35.7C45.3,-29.4,32.5,-12.5,29.5,9.3C26.6,31,33.5,57.5,26.1,65.4C18.6,73.4,-3.3,62.7,-25.5,52.3C-47.8,41.8,-70.5,31.6,-76.6,14.6C-82.8,-2.3,-72.4,-25.8,-56.8,-34.9C-41.3,-44,-20.6,-38.7,-0.6,-38.2C19.4,-37.7,38.7,-42,42,-35.7Z'
-              transform='translate(120 80) scale(1.85)'
+              d='M54,-53.3C70.3,-50.7,83.9,-34,85.1,-16.6C86.3,0.8,75.1,18.8,62,30.4C48.9,42,34,47.2,21.7,45.5C9.5,43.8,-0.1,35.3,-15.4,33.5C-30.7,31.8,-51.8,36.9,-65.9,29.7C-80,22.5,-87.2,2.9,-81.9,-12.2C-76.6,-27.4,-58.9,-38.2,-43.1,-40.9C-27.4,-43.6,-13.7,-38.3,2.6,-41.4C18.9,-44.5,37.7,-56,54,-53.3Z'
+              transform='translate(100 100) scale(1.5)'
             />
           </svg>
         </Box>

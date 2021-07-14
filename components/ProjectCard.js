@@ -4,12 +4,12 @@ import {
   Box,
   Heading,
   Text,
-  Image,
   Tag,
   Divider,
   Link,
 } from '@chakra-ui/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import NextImage from 'next/image';
 
 const ProjectCard = ({ project }) => {
   const {
@@ -33,14 +33,15 @@ const ProjectCard = ({ project }) => {
     <Box>
       <Flex direction='column' position='relative' transition='all 0.5s ease'>
         <Box flex={1} position='relative'>
-          <Image
-            src={previewImage.fields.file.url}
+          <NextImage
+            src={'http:' + previewImage.fields.file.url}
             alt={title}
-            borderRadius='xl'
-            objectFit='cover'
+            height={220}
+            width={300}
+            objectFit='contain'
           />
         </Box>
-        <Box w='100%' position='relative'>
+        <Box position='relative'>
           <Stack p={2}>
             <Flex direction='row' alignItems='center'>
               <Heading flex={1} textAlign='left' variant='subtitle2'>
