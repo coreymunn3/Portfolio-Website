@@ -32,12 +32,12 @@ const ProjectCard = ({ project }) => {
   return (
     <Box>
       <Flex direction='column' position='relative' transition='all 0.5s ease'>
-        <Box flex={1} position='relative'>
+        <Box flex={1} position='relative' m='auto'>
           <NextImage
             src={'http:' + previewImage.fields.file.url}
             alt={title}
             height={220}
-            width={300}
+            width={350}
             objectFit='contain'
           />
         </Box>
