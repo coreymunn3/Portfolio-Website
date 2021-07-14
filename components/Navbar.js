@@ -58,7 +58,7 @@ const Navbar = () => {
             {navLinks.map((navLink) => (
               <NextLink key={navLink} href={`/${navLink}`} passHref>
                 <Button as='a' variant='ghost' fontWeight='light'>
-                  {navLink}
+                  {navLink[0].toUpperCase() + navLink.substring(1)}
                 </Button>
               </NextLink>
             ))}
@@ -99,8 +99,13 @@ const Navbar = () => {
                 <VStack>
                   {navLinks.map((navLink) => (
                     <NextLink key={navLink} href={`/${navLink}`} passHref>
-                      <Button as='a' variant='ghost' fontWeight='light'>
-                        {navLink}
+                      <Button
+                        as='a'
+                        variant='ghost'
+                        fontWeight='light'
+                        onClick={handleClose}
+                      >
+                        {navLink[0].toUpperCase() + navLink.substring(1)}
                       </Button>
                     </NextLink>
                   ))}
