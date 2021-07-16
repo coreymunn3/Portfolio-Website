@@ -14,10 +14,11 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react';
 import { useMediaQuery, useColorModeValue } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import ColorModeSwitch from './ColorModeSwitch';
+import StaggeredGroup from './StaggeredGroup';
 
 const Navbar = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
@@ -33,6 +34,15 @@ const Navbar = () => {
   };
 
   const navLinks = ['resume', 'projects', 'blog'];
+
+  let navLinkItems = navLinks.map((navLink) => (
+    <NextLink key={navLink} href={`/${navLink}`} passHref>
+      <Button as='a' variant='ghost' fontWeight='light' onClick={handleClose}>
+        {navLink[0].toUpperCase() + navLink.substring(1)}
+      </Button>
+    </NextLink>
+  ));
+
   return (
     <Box
       zIndex='10'
@@ -55,14 +65,13 @@ const Navbar = () => {
 
         {isLargerThan768 ? (
           <HStack>
-            {navLinks.map((navLink) => (
-              <NextLink key={navLink} href={`/${navLink}`} passHref>
-                <Button as='a' variant='ghost' fontWeight='light'>
-                  {navLink[0].toUpperCase() + navLink.substring(1)}
-                </Button>
-              </NextLink>
-            ))}
-
+            <StaggeredGroup
+              direction='row'
+              staggerInterval={0.2}
+              childAnimationDuration={1}
+              delay={0.5}
+              items={navLinkItems}
+            />
             <ColorModeSwitch />
           </HStack>
         ) : (
@@ -97,18 +106,12 @@ const Navbar = () => {
                 justifyContent='space-between'
               >
                 <VStack>
-                  {navLinks.map((navLink) => (
-                    <NextLink key={navLink} href={`/${navLink}`} passHref>
-                      <Button
-                        as='a'
-                        variant='ghost'
-                        fontWeight='light'
-                        onClick={handleClose}
-                      >
-                        {navLink[0].toUpperCase() + navLink.substring(1)}
-                      </Button>
-                    </NextLink>
-                  ))}
+                  <StaggeredGroup
+                    direction='column'
+                    staggerInterval={0.2}
+                    childAnimationDuration={1}
+                    items={navLinkItems}
+                  />
                 </VStack>
                 <Box>
                   <Button variant='link' fontWeight='light' w='100%'>
