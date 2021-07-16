@@ -20,6 +20,7 @@ import {
 } from 'react-icons/si';
 import StaggeredGroup from './StaggeredGroup';
 import Typewriter from 'typewriter-effect';
+import SlideIntoView from './SlideIntoView';
 
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
@@ -54,45 +55,72 @@ const Hero = () => {
     </HStack>
   ));
 
+  // order of appearance for items in Hero
+  const introAppearDelay = 1;
+  const nameAppearDelay = introAppearDelay + 0.2;
+  const typewriterAppearDelay = nameAppearDelay + 0.2;
+  const skillsAppearDelay = typewriterAppearDelay + 0.2;
+  const appearanceDuration = 0.5;
+
   return (
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
         <Stack spacing={0}>
-          <Text fontSize={['lg', '2xl']} textAlign='right'>
-            Hello, my name is
-          </Text>
-          <Box mb={8}>
-            <Heading as='h1' fontSize={['5xl', '8xl']} mb={8} variant='title'>
-              Corey Munn.
-            </Heading>
-          </Box>
-          <Flex direction='row'>
-            <Text fontSize={['lg', '2xl']}>I am a &nbsp;</Text>
-            <Text as='span' fontSize={['lg', '2xl']} variant='lead'>
-              <Typewriter
-                options={{
-                  delay: 50,
-                  skipAddStyles: true,
-                  loop: true,
-                  deleteSpeed: 20,
-                }}
-                onInit={(typewriter) => {
-                  typewriter
-                    .pauseFor(1000)
-                    .typeString('React Developer.')
-                    .pauseFor(2000)
-                    .deleteChars(16)
-                    .typeString('Tableau Developer.')
-                    .pauseFor(2000)
-                    .deleteChars(28)
-                    .typeString('Data Viz Enthusiast.')
-                    .pauseFor(2000)
-                    .deleteChars(26)
-                    .start();
-                }}
-              />
+          <SlideIntoView
+            direction='fromBottom'
+            delay={introAppearDelay}
+            duration={appearanceDuration}
+          >
+            <Text fontSize={['lg', '2xl']} textAlign='right'>
+              Hello, my name is
             </Text>
-          </Flex>
+          </SlideIntoView>
+
+          <SlideIntoView
+            direction='fromBottom'
+            delay={nameAppearDelay}
+            duration={appearanceDuration}
+          >
+            <Box mb={8}>
+              <Heading as='h1' fontSize={['5xl', '8xl']} mb={8} variant='title'>
+                Corey Munn.
+              </Heading>
+            </Box>
+          </SlideIntoView>
+
+          <SlideIntoView
+            direction='fromBottom'
+            delay={typewriterAppearDelay}
+            duration={appearanceDuration}
+          >
+            <Flex direction='row'>
+              <Text fontSize={['lg', '2xl']}>I am a &nbsp;</Text>
+              <Text as='span' fontSize={['lg', '2xl']} variant='lead'>
+                <Typewriter
+                  options={{
+                    delay: 50,
+                    skipAddStyles: true,
+                    loop: true,
+                    deleteSpeed: 20,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .pauseFor(2000)
+                      .typeString('React Developer.')
+                      .pauseFor(2000)
+                      .deleteChars(16)
+                      .typeString('Tableau Developer.')
+                      .pauseFor(2000)
+                      .deleteChars(28)
+                      .typeString('Data Viz Enthusiast.')
+                      .pauseFor(2000)
+                      .deleteChars(26)
+                      .start();
+                  }}
+                />
+              </Text>
+            </Flex>
+          </SlideIntoView>
         </Stack>
 
         <HStack>
@@ -133,7 +161,7 @@ const Hero = () => {
           as='ul'
           fontSize={['md', 'lg']}
           staggerInterval={0.2}
-          delay={0.5}
+          delay={skillsAppearDelay}
           childAnimationDuration={1}
           items={techSkillsGroupItems}
         />

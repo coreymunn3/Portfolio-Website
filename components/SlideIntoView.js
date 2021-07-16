@@ -14,6 +14,9 @@ const SlideIntoView = ({
     threshold: pctVisibleThreshold ? pctVisibleThreshold : 0.35,
   });
 
+  const DEFAULT_DURATION = 0.3;
+  const DEFAULT_DELAY = 0.3;
+
   useEffect(() => {
     if (inView) {
       controls.start('visible');
@@ -52,8 +55,8 @@ const SlideIntoView = ({
       y: 0,
       x: 0,
       transition: {
-        delay: delay ? delay : 0.3,
-        duration: duration ? duration : 0.3,
+        delay: delay ? delay : DEFAULT_DELAY,
+        duration: duration ? duration : DEFAULT_DURATION,
       },
     },
   };
