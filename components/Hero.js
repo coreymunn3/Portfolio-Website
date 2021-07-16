@@ -18,12 +18,42 @@ import {
   SiAmazonaws,
   SiNodeDotJs,
 } from 'react-icons/si';
-import StaggeredList from './StaggeredList';
+import StaggeredGroup from './StaggeredGroup';
 import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   const svgColor = useColorModeValue('#F56565', '#ED8936');
+
+  const techSkills = [
+    {
+      text: 'Front End React',
+      icon: <SiReact />,
+    },
+    {
+      text: 'NodeJS',
+      icon: <SiNodeDotJs />,
+    },
+    {
+      text: 'Next JS for Production',
+      icon: <SiNextDotJs />,
+    },
+    {
+      text: 'Learning Typescript',
+      icon: <SiTypescript />,
+    },
+    {
+      text: 'Exploring Serverless with AWS',
+      icon: <SiAmazonaws />,
+    },
+  ];
+  const techSkillsGroupItems = techSkills.map((skill) => (
+    <HStack key={skill.text}>
+      {skill.icon}
+      <Text>{skill.text}</Text>
+    </HStack>
+  ));
+
   return (
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
       <Stack position='relative' zIndex={2} spacing={10}>
@@ -99,32 +129,13 @@ const Hero = () => {
           </Button>
         </HStack>
 
-        <StaggeredList
+        <StaggeredGroup
+          as='ul'
           fontSize={['md', 'lg']}
-          staggerDuration={0.2}
-          childDuration={1}
-          items={[
-            {
-              text: 'Front End React',
-              icon: <SiReact />,
-            },
-            {
-              text: 'NodeJS',
-              icon: <SiNodeDotJs />,
-            },
-            {
-              text: 'Next JS for Production',
-              icon: <SiNextDotJs />,
-            },
-            {
-              text: 'Learning Typescript',
-              icon: <SiTypescript />,
-            },
-            {
-              text: 'Exploring Serverless with AWS',
-              icon: <SiAmazonaws />,
-            },
-          ]}
+          staggerInterval={0.2}
+          delay={0.5}
+          childAnimationDuration={1}
+          items={techSkillsGroupItems}
         />
       </Stack>
       <Box
