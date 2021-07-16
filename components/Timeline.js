@@ -18,11 +18,16 @@ const Timeline = ({ timelineData }) => {
         {Object.keys(timelineData)
           .reverse()
           .map((year) => (
-            <TimelineSection
+            <SlideIntoView
+              direction='fromBottom'
+              pctVisibleThreshold={0.1}
               key={year}
-              year={year}
-              timelineEvents={timelineData[year]}
-            />
+            >
+              <TimelineSection
+                year={year}
+                timelineEvents={timelineData[year]}
+              />
+            </SlideIntoView>
           ))}
       </Stack>
     </SlideIntoView>

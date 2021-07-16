@@ -36,7 +36,8 @@ export async function getStaticProps() {
     content_type: 'projects',
   });
 
-  // format the response
+  // format the response like:
+  // '2018': [ {event}, {event} ]
   const formattedTimelineData = {
     2018: [],
     2019: [],
