@@ -3,14 +3,6 @@ import { motion } from 'framer-motion';
 
 const StagGroup = motion(Stack);
 const GroupItem = motion(Box);
-{
-  /* {items.map((item) => (
-        <StagListItem variants={listItemVariants} key={item.text}>
-          {item?.icon}
-          <Text>{item.text}</Text>
-        </StagListItem>
-      ))} */
-}
 
 const StaggeredGroup = ({
   items, // should be a list of components
