@@ -55,11 +55,45 @@ const Hero = () => {
     </HStack>
   ));
 
+  const contactButtonGroupItems = [
+    <Button
+      as='a'
+      href='mailto:coreymunn3@gmail.com'
+      target='_blank'
+      leftIcon={<EmailIcon />}
+      variant='solid'
+      size={isLargerThan768 ? 'md' : 'sm'}
+    >
+      Email
+    </Button>,
+    <Button
+      as='a'
+      href='https://github.com/coreymunn3'
+      target='_blank'
+      leftIcon={<FaGithub />}
+      variant='solid'
+      size={isLargerThan768 ? 'md' : 'sm'}
+    >
+      Github
+    </Button>,
+    <Button
+      as='a'
+      href='https://www.linkedin.com/in/michael-munn-73228958/'
+      target='_blank'
+      leftIcon={<FaLinkedin />}
+      variant='solid'
+      size={isLargerThan768 ? 'md' : 'sm'}
+    >
+      LinkedIn
+    </Button>,
+  ];
+
   // order of appearance for items in Hero
   const introAppearDelay = 1;
   const nameAppearDelay = introAppearDelay + 0.2;
   const typewriterAppearDelay = nameAppearDelay + 0.2;
-  const skillsAppearDelay = typewriterAppearDelay + 0.2;
+  const buttonsAppearDelay = typewriterAppearDelay + 0.2;
+  const skillsAppearDelay = buttonsAppearDelay + 0.5;
   const appearanceDuration = 0.5;
 
   return (
@@ -123,39 +157,13 @@ const Hero = () => {
           </SlideIntoView>
         </Stack>
 
-        <HStack>
-          <Button
-            as='a'
-            href='mailto:coreymunn3@gmail.com'
-            target='_blank'
-            leftIcon={<EmailIcon />}
-            variant='solid'
-            size={isLargerThan768 ? 'md' : 'sm'}
-          >
-            Email
-          </Button>
-
-          <Button
-            as='a'
-            href='https://github.com/coreymunn3'
-            target='_blank'
-            leftIcon={<FaGithub />}
-            variant='solid'
-            size={isLargerThan768 ? 'md' : 'sm'}
-          >
-            Github
-          </Button>
-          <Button
-            as='a'
-            href='https://www.linkedin.com/in/michael-munn-73228958/'
-            target='_blank'
-            leftIcon={<FaLinkedin />}
-            variant='solid'
-            size={isLargerThan768 ? 'md' : 'sm'}
-          >
-            LinkedIn
-          </Button>
-        </HStack>
+        <StaggeredGroup
+          direction='row'
+          staggerInterval={0.2}
+          delay={buttonsAppearDelay}
+          childAnimationDuration={0.5}
+          items={contactButtonGroupItems}
+        />
 
         <StaggeredGroup
           as='ul'
