@@ -46,16 +46,16 @@ const Navbar = () => {
   ));
 
   return (
-    <SlideIntoView direction='fromTop'>
-      <Box
-        zIndex='10'
-        as='nav'
-        pt={4}
-        pb={4}
-        position='sticky'
-        top='0'
-        backdropFilter='blur(20px)'
-      >
+    <Box
+      zIndex='10'
+      as='nav'
+      pt={4}
+      pb={4}
+      position='sticky'
+      top='0'
+      backdropFilter='blur(20px)'
+    >
+      <SlideIntoView direction='fromTop'>
         <Container
           maxW='3xl'
           display='flex'
@@ -129,8 +129,8 @@ const Navbar = () => {
             </DrawerContent>
           </Drawer>
         </Container>
-      </Box>
-    </SlideIntoView>
+      </SlideIntoView>
+    </Box>
   );
 };
 

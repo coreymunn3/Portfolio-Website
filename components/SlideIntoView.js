@@ -8,6 +8,7 @@ const SlideIntoView = ({
   delay,
   duration,
   pctVisibleThreshold,
+  ...otherProps
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -62,6 +63,7 @@ const SlideIntoView = ({
   };
   return (
     <motion.div
+      {...otherProps}
       variants={containerVariants}
       ref={ref}
       animate={controls}
