@@ -1,4 +1,4 @@
-import { Heading, Stack } from '@chakra-ui/react';
+import Head from 'next/head';
 import { Fragment } from 'react';
 import { createClient } from 'contentful';
 import ProjectGrid from '../../components/ProjectGrid';
@@ -7,6 +7,13 @@ const index = (props) => {
   const { projects } = props;
   return (
     <Fragment>
+      <Head>
+        <title>Corey Munn | Projects</title>
+        <meta
+          name='description'
+          content='I am an experienced developer building beautiful web applications with React, NextJS, and Node.'
+        />
+      </Head>
       <ProjectGrid projects={projects} />
     </Fragment>
   );

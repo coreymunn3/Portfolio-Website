@@ -21,6 +21,13 @@ const index = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>Corey Munn | Resume</title>
+        <meta
+          name='description'
+          content='I am an experienced developer building beautiful web applications with React, NextJS, and Node.'
+        />
+      </Head>
       <Stack>
         <Heading variant='title'>My Resume</Heading>
 

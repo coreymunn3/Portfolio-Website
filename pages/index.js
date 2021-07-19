@@ -11,6 +11,13 @@ export default function Home(props) {
   const { timelineData, projectData } = props;
   return (
     <Fragment>
+      <Head>
+        <title>Corey Munn | React Developer</title>
+        <meta
+          name='description'
+          content='I am an experienced developer building beautiful web applications with React, NextJS, and Node.'
+        />
+      </Head>
       <Stack spacing={[24, 40]}>
         <Hero />
         <AboutMe />
