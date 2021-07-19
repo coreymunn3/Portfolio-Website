@@ -28,15 +28,15 @@ const Hero = () => {
 
   const techSkills = [
     {
-      text: 'Front End React',
+      text: 'React',
       icon: <SiReact />,
     },
     {
-      text: 'NodeJS',
+      text: 'Node.js',
       icon: <SiNodeDotJs />,
     },
     {
-      text: 'Next JS for Production',
+      text: 'Next JS',
       icon: <SiNextDotJs />,
     },
     {
@@ -90,16 +90,16 @@ const Hero = () => {
 
   // order of appearance for items in Hero
   const introAppearDelay = 1;
-  const nameAppearDelay = introAppearDelay + 0.2;
-  const typewriterAppearDelay = nameAppearDelay + 0.2;
-  const buttonsAppearDelay = typewriterAppearDelay + 0.2;
+  const nameAppearDelay = introAppearDelay + 0.1;
+  const typewriterAppearDelay = nameAppearDelay + 0.1;
+  const buttonsAppearDelay = typewriterAppearDelay + 0.1;
   const skillsAppearDelay = buttonsAppearDelay + 0.5;
-  const appearanceDuration = 0.5;
+  const appearanceDuration = 0.4;
 
   return (
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
-      <Stack position='relative' zIndex={2} spacing={10}>
-        <Stack spacing={0}>
+      <Stack position='relative' zIndex={2} spacing={16}>
+        <Stack spacing={4}>
           <SlideIntoView
             direction='fromBottom'
             delay={introAppearDelay}
@@ -176,16 +176,16 @@ const Hero = () => {
       </Stack>
       <Box
         position='absolute'
-        top={[-65, -125]}
-        left={[-65, -115]}
+        top={[-55, -125]}
+        left={[-75, -125]}
         w={[240, 400]}
         h={[240, 400]}
         zIndex={1}
       >
         <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
           <path
-            fill={svgColor}
-            d='M39.5,-32C54.2,-24.7,71.3,-12.4,70.8,-0.5C70.3,11.4,52.2,22.7,37.5,32.3C22.7,41.8,11.4,49.5,-3.7,53.2C-18.8,56.9,-37.6,56.7,-46.7,47.2C-55.9,37.6,-55.2,18.8,-56.5,-1.3C-57.8,-21.4,-61,-42.8,-51.9,-50.1C-42.8,-57.4,-21.4,-50.6,-4.5,-46.1C12.4,-41.6,24.7,-39.3,39.5,-32Z'
+            fill='#FF0066'
+            d='M22.8,-26.5C36.6,-21.4,59.7,-24.1,70.1,-16.9C80.5,-9.7,78.3,7.5,69.7,19.1C61.1,30.7,46.1,36.7,33.4,47.8C20.7,58.8,10.3,74.8,-3.4,79.6C-17.2,84.3,-34.4,77.6,-38.9,63.9C-43.4,50.2,-35.3,29.5,-39.6,13.5C-44,-2.6,-60.9,-13.9,-66.1,-28.7C-71.3,-43.6,-64.7,-61.9,-51.8,-67.3C-38.8,-72.7,-19.4,-65.2,-7.4,-54.9C4.5,-44.7,9,-31.7,22.8,-26.5Z'
             transform='translate(100 100)'
           />
         </svg>
