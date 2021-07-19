@@ -50,10 +50,11 @@ const overrides = {
         fontWeight: 'medium',
       },
       variants: {
-        title: {
+        title: (props) => ({
           fontWeight: 'bold',
           fontSize: ['3xl', '5xl', '5xl'],
-        },
+          color: mode('brand.800', 'brand.100')(props),
+        }),
         subtitle1: {
           fontSize: ['2xl', '3xl', '3xl'],
         },
