@@ -12,6 +12,20 @@ const overrides = {
     medium: 500,
     bold: 700,
   },
+  colors: {
+    brand: {
+      50: '#ddf6ff',
+      100: '#b0deff',
+      200: '#82c6fb',
+      300: '#53aff7',
+      400: '#2196F3',
+      500: '#0c7fda',
+      600: '#0062aa',
+      700: '#00467b',
+      800: '#002a4d',
+      900: '#000f1f',
+    },
+  },
   breakpoints: createBreakpoints({
     sm: '48em',
     md: '62em',
@@ -55,7 +69,7 @@ const overrides = {
       }),
       variants: {
         lead: (props) => ({
-          color: mode('gray.800', 'white')(props),
+          color: mode('brand.800', 'brand.00')(props),
         }),
       },
     },

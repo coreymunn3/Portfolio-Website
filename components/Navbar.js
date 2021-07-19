@@ -1,6 +1,7 @@
 import {
   Box,
   Flex,
+  Image,
   Button,
   HStack,
   VStack,
@@ -14,7 +15,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react';
 import { useMediaQuery, useColorModeValue } from '@chakra-ui/react';
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import ColorModeSwitch from './ColorModeSwitch';
@@ -61,8 +62,11 @@ const Navbar = () => {
           justifyContent='space-between'
           alignItems='center'
         >
-          <Box>
-            <NextLink href='/'>CM</NextLink>
+          {/* Brand Logo */}
+          <Box cursor='pointer'>
+            <NextLink href='/'>
+              <Image src='/images/logo.png' alt='CM' width={['40px', '50px']} />
+            </NextLink>
           </Box>
 
           {isLargerThan768 ? (
