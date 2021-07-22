@@ -32,14 +32,11 @@ const FeaturedProjects = ({ projectData }) => {
         <Box>
           <Heading variant='subtitle1'>Projects</Heading>
           <Text>
-            Check out my best work.{' '}
-            <Link color='red.500' href='/projects'>
-              See all &rarr;
-            </Link>
+            Check out my best work. <Link href='/projects'>See all &rarr;</Link>
           </Text>
         </Box>
 
-        <Stack spacing={28}>
+        <Stack spacing={[24, 56]}>
           {featuredProjects.map((project) => (
             <SlideIntoView key={project.sys.id} direction='fromBottom'>
               {isLargeScreen ? (

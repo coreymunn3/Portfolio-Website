@@ -15,7 +15,7 @@ const Contact = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   return (
     <SlideIntoView direction='fromBottom' pctVisibleThreshold={0.1}>
-      <Stack spacing={8}>
+      <Stack spacing={8} mt={24}>
         <SlideIntoView direction='fromBottom' delay={0.5} duration={0.2}>
           <Heading textAlign='center'>Get In Touch</Heading>
         </SlideIntoView>

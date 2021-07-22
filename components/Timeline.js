@@ -10,8 +10,8 @@ const Timeline = ({ timelineData }) => {
           Timeline
         </Heading>
         <Text>
-          A quick overview of my recent activities. See{' '}
-          <Link color='red.500'>my resume</Link> for more depth.
+          A quick overview of my recent activities. See <Link>my resume</Link>{' '}
+          for more depth.
         </Text>
 
         {/* create timeline sections for every relevant year */}
@@ -19,7 +19,7 @@ const Timeline = ({ timelineData }) => {
           .reverse()
           .map((year) => (
             <SlideIntoView
-              direction='fromBottom'
+              direction='fromRight'
               pctVisibleThreshold={0.1}
               key={year}
             >

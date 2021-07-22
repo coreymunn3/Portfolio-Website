@@ -53,7 +53,7 @@ const overrides = {
         title: (props) => ({
           fontWeight: 'bold',
           fontSize: ['3xl', '5xl', '5xl'],
-          color: mode('brand.800', 'brand.100')(props),
+          color: mode('brand.800', 'white')(props),
         }),
         subtitle1: {
           fontSize: ['2xl', '3xl', '3xl'],
@@ -70,9 +70,14 @@ const overrides = {
       }),
       variants: {
         lead: (props) => ({
-          color: mode('brand.800', 'brand.00')(props),
+          color: mode('brand.900', 'white')(props),
         }),
       },
+    },
+    Link: {
+      baseStyle: (props) => ({
+        color: mode('brand.400', 'brand.200')(props),
+      }),
     },
   },
 };
