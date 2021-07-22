@@ -60,24 +60,22 @@ const ProjectCardLarge = ({ project }) => {
             <Flex justifyContent='flex-end'>
               {githubLink && (
                 <Link
-                  color='black'
+                  variant='icon'
                   href={githubLink}
                   isExternal
                   target='_blank'
                   p={2}
-                  _hover={{ color: 'brand.400' }}
                 >
                   <FaGithub size={'1.3rem'} />
                 </Link>
               )}
               {siteLink && (
                 <Link
-                  color='black'
+                  variant='icon'
                   href={siteLink}
                   isExternal
                   target='_blank'
                   p={2}
-                  _hover={{ color: 'brand.400' }}
                 >
                   <FaExternalLinkAlt size={'1.2rem'} />
                 </Link>

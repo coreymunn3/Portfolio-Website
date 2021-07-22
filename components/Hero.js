@@ -130,7 +130,12 @@ const Hero = () => {
           >
             <Flex direction='row'>
               <Text fontSize={['lg', '2xl']}>I am a &nbsp;</Text>
-              <Text as='span' fontSize={['lg', '2xl']} variant='lead'>
+              <Text
+                as='span'
+                fontSize={['lg', '2xl']}
+                variant='primary'
+                fontWeight='bold'
+              >
                 <Typewriter
                   options={{
                     delay: 50,

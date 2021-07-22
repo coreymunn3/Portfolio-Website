@@ -51,10 +51,10 @@ const ProjectCard = ({ project }) => {
                 {githubLink && (
                   <Link
                     href={githubLink}
+                    variant='icon'
                     isExternal
                     target='_blank'
                     p={2}
-                    _hover={{ color: 'red.500' }}
                   >
                     <FaGithub size={'1.3rem'} />
                   </Link>
@@ -62,10 +62,10 @@ const ProjectCard = ({ project }) => {
                 {siteLink && (
                   <Link
                     href={siteLink}
+                    variant='icon'
                     isExternal
                     target='_blank'
                     p={2}
-                    _hover={{ color: 'red.500' }}
                   >
                     <FaExternalLinkAlt size={'1.2rem'} />
                   </Link>

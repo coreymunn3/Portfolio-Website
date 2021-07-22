@@ -13,7 +13,7 @@ const ProjectGrid = ({ projects }) => {
             My Projects
           </Heading>
           <Text
-            color='white'
+            variant='lead'
             textAlign='center'
             maxW={['200px', '100%']}
             margin='auto'

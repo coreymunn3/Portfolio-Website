@@ -53,14 +53,15 @@ const overrides = {
         title: (props) => ({
           fontWeight: 'bold',
           fontSize: ['3xl', '5xl', '5xl'],
-          color: mode('brand.800', 'white')(props),
+          color: mode('brand.900', 'white')(props),
         }),
         subtitle1: {
           fontSize: ['2xl', '3xl', '3xl'],
         },
-        subtitle2: {
+        subtitle2: (props) => ({
           fontSize: ['lg', 'xl', 'xl'],
-        },
+          color: mode('brand.400', 'brand.200')(props),
+        }),
       },
     },
     Text: {
@@ -70,14 +71,28 @@ const overrides = {
       }),
       variants: {
         lead: (props) => ({
-          color: mode('brand.900', 'white')(props),
+          color: mode('black', 'white')(props),
+        }),
+        primary: (props) => ({
+          color: mode('brand.400', 'brand.200')(props),
         }),
       },
     },
     Link: {
       baseStyle: (props) => ({
         color: mode('brand.400', 'brand.200')(props),
+        _hover: {
+          color: mode('brand.500'),
+        },
       }),
+      variants: {
+        icon: (props) => ({
+          color: mode('black', 'white')(props),
+          _hover: {
+            color: 'brand.400',
+          },
+        }),
+      },
     },
   },
 };
