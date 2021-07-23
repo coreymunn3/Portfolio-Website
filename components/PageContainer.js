@@ -9,8 +9,8 @@ const PageContainer = ({ children }) => {
       <Navbar />
       <Container maxW='3xl' padding={8}>
         {children}
+        <Contact />
       </Container>
-      <Contact />
     </Fragment>
   );
 };
