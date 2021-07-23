@@ -10,11 +10,11 @@ const BlogArticle = ({ blogPost }) => {
   const [isLoading, setIsLoading] = useState(true);
   const handleImageLoad = () => setIsLoading(false);
   return (
-    <Flex py={2}>
-      <Box mr={4}>
+    <Flex py={2} direction={['column', 'row']}>
+      <Box mr={4} mb={4}>
         <Skeleton isLoaded={!isLoading}>
           <Image
-            w='200px'
+            w={['100%', '200px']}
             h='150px'
             src={fields.thumbnailImage.fields.file.url}
             alt='journey'
@@ -24,7 +24,7 @@ const BlogArticle = ({ blogPost }) => {
           />
         </Skeleton>
       </Box>
-      <Box flex={1} cursor='pointer'>
+      <Box flex={1} cursor='pointer' mb={4}>
         <Stack spacing={0} h='100%'>
           {/* this heading will have to be a link eventually */}
           <Text
@@ -38,9 +38,15 @@ const BlogArticle = ({ blogPost }) => {
           </Text>
           <Text flex={1}>{fields.description}</Text>
           {/* just a placeholder for now */}
-          <Text textAlign='left' fontStyle='italic'>
-            1,000 Views &bull; 5 min read
-          </Text>
+          <Flex justifyContent='space-between'>
+            <Text fontStyle='italic'>
+              {new Date(sys.createdAt).toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric',
+              })}
+            </Text>
+            <Text fontStyle='italic'>1,000 Views &bull; 5 min read</Text>
+          </Flex>
         </Stack>
       </Box>
     </Flex>
