@@ -15,7 +15,7 @@ export default function Home(props) {
         <title>Corey Munn | React Developer</title>
         <meta
           name='description'
-          content='I am an experienced developer building beautiful web applications with React, NextJS, and Node.'
+          content='Corey Munn is an experienced developer building beautiful web applications with React, NextJS, and Node. View my Resume, Project repositories, and Blog.'
         />
       </Head>
       <Stack spacing={[24, 40]}>

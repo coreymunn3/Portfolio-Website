@@ -94,6 +94,11 @@ const overrides = {
         }),
       },
     },
+    Skeleton: {
+      baseStyle: {
+        borderRadius: 'xl',
+      },
+    },
   },
 };
 

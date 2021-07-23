@@ -11,7 +11,7 @@ const index = (props) => {
         <title>Corey Munn | Projects</title>
         <meta
           name='description'
-          content='I am an experienced developer building beautiful web applications with React, NextJS, and Node.'
+          content='Corey Munn is an experienced developer building beautiful web applications with React, NextJS, and Node. These are my projects.'
         />
       </Head>
       <ProjectGrid projects={projects} />
