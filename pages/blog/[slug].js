@@ -1,9 +1,15 @@
 import { createClient } from 'contentful';
 import BlogPostContents from '../../components/BlogPostContents';
+import { Fragment } from 'react';
 
 const BlogPost = (props) => {
   const { blogPost } = props;
-  return <BlogPostContents blogPost={blogPost} />;
+  console.log(blogPost);
+  return (
+    <Fragment>
+      <BlogPostContents blogPost={blogPost} />
+    </Fragment>
+  );
 };
 
 export default BlogPost;
@@ -16,12 +22,12 @@ const client = createClient({
 export async function getStaticProps({ params }) {
   let res = await client.getEntries({
     content_type: 'blogPost',
+    'fields.slug': params.slug,
   });
 
   return {
     props: {
       blogPost: res.items[0],
-      'fields.slug': params.slug,
     },
   };
 }
