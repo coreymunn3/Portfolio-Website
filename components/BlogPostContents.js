@@ -12,11 +12,11 @@ import {
   Divider,
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
-import { useColorModeValue } from '@chakra-ui/color-mode';
+import CodeBlock from './CodeBlock';
 
 const BlogPostContents = ({ blogPost }) => {
   const { fields, metadata, sys } = blogPost;
-  const codeBlockBg = useColorModeValue('brand.50', 'brand.800');
+
   // custom rich text rendering using contentful packages
   // see: https://www.reddit.com/r/gatsbyjs/comments/hiwqh6/contentful_rich_text_rendering_is_it_worth/
   const options = {
@@ -24,7 +24,13 @@ const BlogPostContents = ({ blogPost }) => {
       [MARKS.BOLD]: (text) => <Text as='strong'>{text}</Text>,
       [MARKS.ITALIC]: (text) => <Text as='em'>{text}</Text>,
       [MARKS.UNDERLINE]: (text) => <Text as='u'>{text}</Text>,
-      [MARKS.CODE]: (text) => <Text as='code'>{text}</Text>,
+      [MARKS.CODE]: (text) => (
+        <CodeBlock>
+          <Text as='pre' whiteSpace='pre-wrap'>
+            {text}
+          </Text>
+        </CodeBlock>
+      ),
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
