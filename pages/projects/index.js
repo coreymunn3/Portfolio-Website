@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { createClient } from 'contentful';
 import ProjectGrid from '../../components/ProjectGrid';
 
-const index = (props) => {
+const Projects = (props) => {
   const { projects } = props;
   return (
     <Fragment>
@@ -19,7 +19,7 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Projects;
 
 export async function getStaticProps() {
   const client = createClient({

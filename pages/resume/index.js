@@ -11,7 +11,7 @@ import { Fragment } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { createClient } from 'contentful';
 
-const index = (props) => {
+const Resume = (props) => {
   const resume = props.resume[0];
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
 
@@ -45,7 +45,7 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Resume;
 
 export async function getStaticProps() {
   const client = createClient({

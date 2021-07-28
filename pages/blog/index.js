@@ -4,7 +4,7 @@ import { Stack, Heading, Text, Divider } from '@chakra-ui/layout';
 import { Fragment } from 'react';
 import BlogList from '../../components/BlogList';
 
-const index = (props) => {
+const Blog = (props) => {
   const { blogPosts } = props;
   return (
     <Fragment>
@@ -26,7 +26,7 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Blog;
 
 export async function getStaticProps() {
   const client = createClient({
