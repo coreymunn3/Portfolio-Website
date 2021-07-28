@@ -4,7 +4,7 @@ import { Image } from '@chakra-ui/image';
 import { useState } from 'react';
 import NextLink from 'next/link';
 
-const BlogArticle = ({ blogPost }) => {
+const BlogListItem = ({ blogPost }) => {
   console.log(blogPost);
   const { fields, sys, meta } = blogPost;
   // for image load
@@ -55,4 +55,4 @@ const BlogArticle = ({ blogPost }) => {
   );
 };
 
-export default BlogArticle;
+export default BlogListItem;
