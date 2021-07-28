@@ -2,6 +2,7 @@ import { Stack, Flex, Box, Text, Heading } from '@chakra-ui/layout';
 import { Skeleton } from '@chakra-ui/skeleton';
 import { Image } from '@chakra-ui/image';
 import { useState } from 'react';
+import NextLink from 'next/link';
 
 const BlogArticle = ({ blogPost }) => {
   console.log(blogPost);
@@ -24,7 +25,7 @@ const BlogArticle = ({ blogPost }) => {
           />
         </Skeleton>
       </Box>
-      <Box flex={1} cursor='pointer' mb={4}>
+      <Box flex={1} mb={4}>
         <Stack spacing={0} h='100%'>
           {/* this heading will have to be a link eventually */}
           <Text
@@ -33,8 +34,9 @@ const BlogArticle = ({ blogPost }) => {
             fontSize='lg'
             fontWeight='bold'
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
           >
-            {fields.title}
+            <NextLink href={`blog/${fields.slug}`}>{fields.title}</NextLink>
           </Text>
           <Text flex={1}>{fields.description}</Text>
           {/* just a placeholder for now */}
