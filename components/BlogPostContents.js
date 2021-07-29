@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
 import CodeBlock from './CodeBlock';
+import QuoteBlock from './QuoteBlock';
 
 const BlogPostContents = ({ blogPost }) => {
   const { fields, metadata, sys } = blogPost;
@@ -33,7 +34,7 @@ const BlogPostContents = ({ blogPost }) => {
       ),
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text as='span'>{children}</Text>,
       [BLOCKS.HEADING_3]: (node, children) => (
         <Heading as='h3' variant='subtitle1' pt={8}>
           {children}
@@ -74,9 +75,14 @@ const BlogPostContents = ({ blogPost }) => {
       [BLOCKS.LIST_ITEM]: (node, children) => (
         <ListItem as='li'>{children}</ListItem>
       ),
-      // [BLOCKS.QUOTE]: (node, children) => (
-
-      // ),
+      [BLOCKS.QUOTE]: (node, children) => (
+        // assumes only 1 paragraph of quote content and nothing else
+        <QuoteBlock>
+          <Text fontSize='lg' variant='lead'>
+            {node.content[0].content[0].value}
+          </Text>
+        </QuoteBlock>
+      ),
       [INLINES.HYPERLINK]: (node, children) => (
         <Link href={node.data.uri} target='_blank'>
           {children}
