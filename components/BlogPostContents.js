@@ -74,6 +74,9 @@ const BlogPostContents = ({ blogPost }) => {
       [BLOCKS.LIST_ITEM]: (node, children) => (
         <ListItem as='li'>{children}</ListItem>
       ),
+      // [BLOCKS.QUOTE]: (node, children) => (
+
+      // ),
       [INLINES.HYPERLINK]: (node, children) => (
         <Link href={node.data.uri} target='_blank'>
           {children}

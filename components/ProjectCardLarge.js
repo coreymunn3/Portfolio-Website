@@ -2,6 +2,7 @@ import {
   Flex,
   Stack,
   Box,
+  Center,
   Heading,
   Text,
   Image,
@@ -10,12 +11,14 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import FeaturedProjectSVG from './svg/FeaturedProjectSVG';
+import { useState } from 'react';
 
 const ProjectCardLarge = ({ project }) => {
   const {
     githubLink,
     siteLink,
     isFeaturedProject,
+    coldStartWarning,
     title,
     description,
     previewImage,
@@ -28,6 +31,12 @@ const ProjectCardLarge = ({ project }) => {
       {item}
     </Tag>
   ));
+
+  const [showWarning, setShowWarning] = useState(true);
+
+  const toggleShowWarning = () => {
+    setShowWarning(!showWarning);
+  };
 
   return (
     <Flex transition='all 0.5s ease'>
@@ -42,7 +51,18 @@ const ProjectCardLarge = ({ project }) => {
           borderRadius='xl'
           transition='background 0.3s ease-in-out'
           _hover={{ bgColor: 'rgba(0,0,0,0)' }}
-        ></Box>
+          onMouseEnter={toggleShowWarning}
+          onMouseLeave={toggleShowWarning}
+        >
+          {coldStartWarning && showWarning && (
+            <Center w='full' h='full' p={8} pr={24}>
+              <Text align='center' color='white'>
+                This project is hosted on a Server that has to cold start.
+                Please allow up to 30 seconds to allow the server to boot up.
+              </Text>
+            </Center>
+          )}
+        </Box>
 
         <Image
           src={previewImage.fields.file.url}

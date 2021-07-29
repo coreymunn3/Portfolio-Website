@@ -11,9 +11,10 @@ import SlideIntoView from './SlideIntoView';
 import ProjectCard from './ProjectCard';
 import ProjectCardLarge from './ProjectCardLarge';
 
-const FeaturedProjects = ({ projectData }) => {
+const FeaturedProjects = ({ projects }) => {
   // SSR Workaround for chakra useMediaQuery bug
   // https://github.com/chakra-ui/chakra-ui/issues/3124
+  console.log(projects);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   useEffect(() => {
@@ -21,10 +22,6 @@ const FeaturedProjects = ({ projectData }) => {
       setIsLargeScreen(isLargerThan768);
     }
   }, [isLargerThan768]);
-
-  const featuredProjects = projectData.filter(
-    (project) => project.fields.isFeaturedProject === true
-  );
 
   return (
     <SlideIntoView pctVisibleThreshold='0.1' direction='fromBottom'>
@@ -37,7 +34,7 @@ const FeaturedProjects = ({ projectData }) => {
         </Box>
 
         <Stack spacing={[24, 56]}>
-          {featuredProjects.map((project) => (
+          {projects.map((project) => (
             <SlideIntoView key={project.sys.id} direction='fromBottom'>
               {isLargeScreen ? (
                 <ProjectCardLarge project={project} />

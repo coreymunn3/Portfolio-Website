@@ -8,6 +8,11 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import { createClient } from 'contentful';
 export default function Home(props) {
   const { timelineData, projectData } = props;
+
+  const featuredProjects = projectData.filter(
+    (project) => project.fields.isFeaturedProject === true
+  );
+
   return (
     <Fragment>
       <Head>
@@ -21,7 +26,7 @@ export default function Home(props) {
         <Hero />
         <AboutMe />
         <Timeline timelineData={timelineData} />
-        <FeaturedProjects projectData={projectData} />
+        <FeaturedProjects projects={featuredProjects} />
       </Stack>
     </Fragment>
   );
