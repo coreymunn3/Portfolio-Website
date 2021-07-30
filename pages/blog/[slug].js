@@ -1,4 +1,6 @@
 import { createClient } from 'contentful';
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
+import readingTime from 'reading-time';
 import BlogPostContents from '../../components/BlogPostContents';
 import { Fragment } from 'react';
 
@@ -25,9 +27,14 @@ export async function getStaticProps({ params }) {
     'fields.slug': params.slug,
   });
 
+  const blogPost = res.items[0];
+  // calculate reading time
+  const plainText = documentToPlainTextString(blogPost.fields.richTextContent);
+  blogPost['readingTime'] = readingTime(plainText);
+
   return {
     props: {
-      blogPost: res.items[0],
+      blogPost,
     },
   };
 }

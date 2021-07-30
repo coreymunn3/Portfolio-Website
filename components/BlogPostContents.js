@@ -16,7 +16,7 @@ import CodeBlock from './CodeBlock';
 import QuoteBlock from './QuoteBlock';
 
 const BlogPostContents = ({ blogPost }) => {
-  const { fields, metadata, sys } = blogPost;
+  const { fields, metadata, sys, readingTime } = blogPost;
 
   // custom rich text rendering using contentful packages
   // see: https://www.reddit.com/r/gatsbyjs/comments/hiwqh6/contentful_rich_text_rendering_is_it_worth/
@@ -102,7 +102,7 @@ const BlogPostContents = ({ blogPost }) => {
             year: 'numeric',
           })}
         </Text>
-        <Text>1,000 Views &bull; 5 min read</Text>
+        <Text>1,000 Views &bull; {readingTime.text}</Text>
       </Flex>
       <Divider />
       {documentToReactComponents(fields.richTextContent, options)}
