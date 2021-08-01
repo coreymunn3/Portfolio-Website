@@ -1,6 +1,7 @@
 import { Heading, Text, Link, Stack } from '@chakra-ui/react';
 import TimelineSection from './TimelineSection';
 import SlideIntoView from './SlideIntoView';
+import LinkHighlight from './LinkHighlight';
 
 const Timeline = ({ timelineData }) => {
   return (
@@ -10,8 +11,8 @@ const Timeline = ({ timelineData }) => {
           Timeline
         </Heading>
         <Text>
-          A quick overview of my recent activities. See <Link>my resume</Link>{' '}
-          for more depth.
+          A quick overview of my recent activities. See{' '}
+          <LinkHighlight>my resume</LinkHighlight> for more depth.
         </Text>
 
         {/* create timeline sections for every relevant year */}

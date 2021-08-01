@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 import SlideIntoView from './SlideIntoView';
 import ProjectCard from './ProjectCard';
 import ProjectCardLarge from './ProjectCardLarge';
+import LinkHighlight from './LinkHighlight';
 
 const FeaturedProjects = ({ projects }) => {
   // SSR Workaround for chakra useMediaQuery bug
@@ -30,7 +31,8 @@ const FeaturedProjects = ({ projects }) => {
         <Stack>
           <Heading variant='subtitle1'>Projects</Heading>
           <Text>
-            Check out my best work. <Link href='/projects'>See all &rarr;</Link>
+            Check out my best work.{' '}
+            <LinkHighlight href='/projects'>See all &rarr;</LinkHighlight>
           </Text>
           <Divider />
         </Stack>

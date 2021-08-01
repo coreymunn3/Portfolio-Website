@@ -14,6 +14,7 @@ import {
 import { Image } from '@chakra-ui/image';
 import CodeBlock from './CodeBlock';
 import QuoteBlock from './QuoteBlock';
+import LinkHighlight from './LinkHighlight';
 
 const BlogPostContents = ({ blogPost }) => {
   const { fields, metadata, sys, readingTime } = blogPost;
@@ -84,9 +85,9 @@ const BlogPostContents = ({ blogPost }) => {
         </QuoteBlock>
       ),
       [INLINES.HYPERLINK]: (node, children) => (
-        <Link href={node.data.uri} target='_blank'>
+        <LinkHighlight href={node.data.uri} target='_blank'>
           {children}
-        </Link>
+        </LinkHighlight>
       ),
     },
   };

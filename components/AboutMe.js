@@ -1,6 +1,7 @@
 import { Box, Flex, Stack, Heading, Text, Link } from '@chakra-ui/react';
 import SlideIntoView from './SlideIntoView';
 import NextLink from 'next/link';
+import LinkHighlight from './LinkHighlight';
 
 const AboutMe = () => {
   return (
@@ -15,7 +16,7 @@ const AboutMe = () => {
                 href='/blog/my-two-year-journey-learning-web-development-while-working-full-time'
                 passHref
               >
-                <Link>I have spent the last two years</Link>
+                <LinkHighlight>I have spent the last two years</LinkHighlight>
               </NextLink>{' '}
               developing my passion for building beautiful web applications with
               React, Node, and Next. What started as just a side-interest has
@@ -29,7 +30,7 @@ const AboutMe = () => {
               applications with my passion for front end development. As a
               self-taught developer with a couple years of personal study (
               <NextLink href='/projects' passHref>
-                <Link>check out my projects</Link>
+                <LinkHighlight>check out my projects</LinkHighlight>
               </NextLink>
               ) I'm eager to embark on the next stage in my career as a front
               end developer!
