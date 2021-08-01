@@ -27,23 +27,43 @@ const Hero = () => {
 
   const techSkills = [
     {
-      text: <Text variant='lead'>React</Text>,
+      text: (
+        <Text as='span' variant='lead'>
+          React
+        </Text>
+      ),
       icon: <SiReact size='2rem' color='#2196F3' />,
     },
     {
-      text: <Text variant='lead'>Node.js</Text>,
+      text: (
+        <Text as='span' variant='lead'>
+          Node.js
+        </Text>
+      ),
       icon: <SiNodeDotJs size='2rem' color='#2196F3' />,
     },
     {
-      text: <Text variant='lead'>NextJS</Text>,
+      text: (
+        <Text as='span' variant='lead'>
+          NextJS
+        </Text>
+      ),
       icon: <SiNextDotJs size='2rem' color='#2196F3' />,
     },
     {
-      text: <Text variant='lead'>Learning Typescript</Text>,
+      text: (
+        <Text as='span' variant='lead'>
+          Learning Typescript
+        </Text>
+      ),
       icon: <SiTypescript size='2rem' color='#2196F3' />,
     },
     {
-      text: <Text variant='lead'>Exploring Serverless with AWS</Text>,
+      text: (
+        <Text as='span' variant='lead'>
+          Exploring Serverless with AWS
+        </Text>
+      ),
       icon: <SiAmazonaws size='2rem' color='#2196F3' />,
     },
   ];
