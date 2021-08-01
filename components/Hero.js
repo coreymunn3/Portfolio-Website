@@ -171,7 +171,7 @@ const Hero = () => {
 
         <StaggeredGroup
           as='ul'
-          spacing={4}
+          spacing={[2, 4]}
           fontSize={['md', 'lg']}
           staggerInterval={0.2}
           delay={skillsAppearDelay}

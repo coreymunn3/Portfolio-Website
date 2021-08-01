@@ -1,27 +1,38 @@
-import { Box, Flex, Stack, Heading, Text, Image } from '@chakra-ui/react';
+import { Box, Flex, Stack, Heading, Text, Link } from '@chakra-ui/react';
 import SlideIntoView from './SlideIntoView';
+import NextLink from 'next/link';
 
 const AboutMe = () => {
   return (
     <SlideIntoView direction='fromBottom'>
       <Box>
         <Flex direction={['column', 'row']} w='100%'>
-          <Stack maxW={['100%', '50%']}>
+          <Stack maxW={['100%', '50%']} spacing={4}>
             <Heading variant='subtitle1'>About Me</Heading>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
-              consectetur nulla. Integer sit amet odio ante. Etiam dolor metus,
-              tristique dapibus dui eget, tincidunt dictum urna. Cras id ante
-              sed est consectetur consectetur. Sed aliquam ornare convallis.
-              Donec massa nulla, condimentum non laoreet vitae, eleifend ut
-              urna. Vivamus sagittis, urna iaculis suscipit commodo, massa erat
-              tempus lacus, non auctor metus leo quis neque. Sed et tincidunt
-              nibh. Etiam vitae erat in elit posuere convallis eget vel ligula.
+            <Text as='span'>
+              I am a 29 year-old Data Visualization Consultant and{' '}
+              <NextLink
+                href='/blog/my-two-year-journey-learning-web-development-while-working-full-time'
+                passHref
+              >
+                <Link>I have spent the last two years</Link>
+              </NextLink>{' '}
+              developing my passion for building beautiful web applications with
+              React, Node, and Next. What started as just a side-interest has
+              become a serious hobby that I consistently spend 10-15 hours per
+              week practicing.
             </Text>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac
-              consectetur nulla. Integer sit amet odio ante. Etiam dolor metus,
-              tristique dapibus dui eget, tincidunt dictum urna.
+            <Text as='span'>
+              In the near-future, I hope to take this hobby full time by joining
+              an agile team as a React developer where I can combine my 3 years
+              of designing and developing data-intensive business intelligence
+              applications with my passion for front end development. As a
+              self-taught developer with a couple years of personal study (
+              <NextLink href='/projects' passHref>
+                <Link>check out my projects</Link>
+              </NextLink>
+              ) I'm eager to embark on the next stage in my career as a front
+              end developer!
             </Text>
           </Stack>
           <Flex justifyContent='center' alignItems='flex-start' w='100%' mt={4}>
