@@ -6,7 +6,6 @@ import {
   Button,
   Box,
   Flex,
-  useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
@@ -25,28 +24,27 @@ import SlideIntoView from './SlideIntoView';
 
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
-  const svgColor = useColorModeValue('brand.400', 'brand.600');
 
   const techSkills = [
     {
-      text: 'React',
-      icon: <SiReact />,
+      text: <Text variant='lead'>React</Text>,
+      icon: <SiReact size='2rem' color='#2196F3' />,
     },
     {
-      text: 'Node.js',
-      icon: <SiNodeDotJs />,
+      text: <Text variant='lead'>Node.js</Text>,
+      icon: <SiNodeDotJs size='2rem' color='#2196F3' />,
     },
     {
-      text: 'Next JS',
-      icon: <SiNextDotJs />,
+      text: <Text variant='lead'>NextJS</Text>,
+      icon: <SiNextDotJs size='2rem' color='#2196F3' />,
     },
     {
-      text: 'Learning Typescript',
-      icon: <SiTypescript />,
+      text: <Text variant='lead'>Learning Typescript</Text>,
+      icon: <SiTypescript size='2rem' color='#2196F3' />,
     },
     {
-      text: 'Exploring Serverless with AWS',
-      icon: <SiAmazonaws />,
+      text: <Text variant='lead'>Exploring Serverless with AWS</Text>,
+      icon: <SiAmazonaws size='2rem' color='#2196F3' />,
     },
   ];
   const techSkillsGroupItems = techSkills.map((skill) => (
@@ -99,7 +97,7 @@ const Hero = () => {
 
   return (
     <Box position='relative' mt={[0, 150]} mb={[0, 50]}>
-      <Stack position='relative' zIndex={2} spacing={16}>
+      <Stack position='relative' zIndex={2} spacing={12}>
         <Stack spacing={6}>
           <SlideIntoView
             direction='fromBottom'
@@ -173,6 +171,7 @@ const Hero = () => {
 
         <StaggeredGroup
           as='ul'
+          spacing={4}
           fontSize={['md', 'lg']}
           staggerInterval={0.2}
           delay={skillsAppearDelay}

@@ -4,6 +4,7 @@ import {
   Heading,
   Text,
   Link,
+  Divider,
   useMediaQuery,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
@@ -26,12 +27,13 @@ const FeaturedProjects = ({ projects }) => {
   return (
     <SlideIntoView pctVisibleThreshold='0.1' direction='fromBottom'>
       <Stack spacing={8}>
-        <Box>
+        <Stack>
           <Heading variant='subtitle1'>Projects</Heading>
           <Text>
             Check out my best work. <Link href='/projects'>See all &rarr;</Link>
           </Text>
-        </Box>
+          <Divider />
+        </Stack>
 
         <Stack spacing={[24, 56]}>
           {projects.map((project) => (

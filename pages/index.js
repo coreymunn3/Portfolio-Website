@@ -25,8 +25,8 @@ export default function Home(props) {
       <Stack spacing={[24, 40]}>
         <Hero />
         <AboutMe />
-        <Timeline timelineData={timelineData} />
         <FeaturedProjects projects={featuredProjects} />
+        <Timeline timelineData={timelineData} />
       </Stack>
     </Fragment>
   );
