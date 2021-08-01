@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 
 const BlogListItem = ({ blogPost }) => {
   console.log(blogPost);
-  const { fields, sys, meta } = blogPost;
+  const { fields, sys, meta, readingTime } = blogPost;
   // for image load
   const [isLoading, setIsLoading] = useState(true);
   const handleImageLoad = () => setIsLoading(false);
@@ -47,7 +47,9 @@ const BlogListItem = ({ blogPost }) => {
                 year: 'numeric',
               })}
             </Text>
-            <Text fontStyle='italic'>1,000 Views &bull; 5 min read</Text>
+            <Text fontStyle='italic'>
+              1,000 Views &bull; {readingTime.text}
+            </Text>
           </Flex>
         </Stack>
       </Box>

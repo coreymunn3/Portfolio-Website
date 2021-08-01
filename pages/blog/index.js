@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { createClient } from 'contentful';
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
+import readingTime from 'reading-time';
 import { Stack, Heading, Text, Divider } from '@chakra-ui/layout';
 import { Fragment } from 'react';
 import BlogList from '../../components/BlogList';
@@ -38,9 +40,15 @@ export async function getStaticProps() {
     content_type: 'blogPost',
   });
 
+  const blogPosts = res.items.map((post) => {
+    const plainText = documentToPlainTextString(post.fields.richTextContent);
+    post['readingTime'] = readingTime(plainText);
+    return post;
+  });
+
   return {
     props: {
-      blogPosts: res.items,
+      blogPosts,
     },
   };
 }
