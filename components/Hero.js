@@ -7,6 +7,7 @@ import {
   Box,
   Flex,
   useMediaQuery,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -24,7 +25,8 @@ import SlideIntoView from './SlideIntoView';
 
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
-
+  const iconColor = useColorModeValue('#2196F3', '#82c6fb');
+  console.log(iconColor);
   const techSkills = [
     {
       text: (
@@ -32,7 +34,7 @@ const Hero = () => {
           React
         </Text>
       ),
-      icon: <SiReact size='2rem' color='#2196F3' />,
+      icon: <SiReact size='2rem' color={iconColor} />,
     },
     {
       text: (
@@ -40,7 +42,7 @@ const Hero = () => {
           Node.js
         </Text>
       ),
-      icon: <SiNodeDotJs size='2rem' color='#2196F3' />,
+      icon: <SiNodeDotJs size='2rem' color={iconColor} />,
     },
     {
       text: (
@@ -48,7 +50,7 @@ const Hero = () => {
           NextJS
         </Text>
       ),
-      icon: <SiNextDotJs size='2rem' color='#2196F3' />,
+      icon: <SiNextDotJs size='2rem' color={iconColor} />,
     },
     {
       text: (
@@ -56,7 +58,7 @@ const Hero = () => {
           Learning Typescript
         </Text>
       ),
-      icon: <SiTypescript size='2rem' color='#2196F3' />,
+      icon: <SiTypescript size='2rem' color={iconColor} />,
     },
     {
       text: (
@@ -64,7 +66,7 @@ const Hero = () => {
           Exploring Serverless with AWS
         </Text>
       ),
-      icon: <SiAmazonaws size='2rem' color='#2196F3' />,
+      icon: <SiAmazonaws size='2rem' color={iconColor} />,
     },
   ];
   const techSkillsGroupItems = techSkills.map((skill) => (
