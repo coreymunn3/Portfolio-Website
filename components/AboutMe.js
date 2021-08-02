@@ -11,7 +11,7 @@ const AboutMe = () => {
           <Stack maxW={['100%', '50%']} spacing={4}>
             <Heading variant='subtitle1'>About Me</Heading>
             <Text as='span'>
-              I am a 29 year-old Data Visualization Consultant and{' '}
+              I am an experienced Data Visualization Consultant and{' '}
               <NextLink
                 href='/blog/my-two-year-journey-learning-web-development-while-working-full-time'
                 passHref
@@ -19,16 +19,13 @@ const AboutMe = () => {
                 <LinkHighlight>I have spent the last two years</LinkHighlight>
               </NextLink>{' '}
               developing my passion for building beautiful web applications with
-              React, Node, and Next. What started as just a side-interest has
-              become a serious hobby that I consistently spend 10-15 hours per
-              week practicing.
-            </Text>
-            <Text as='span'>
-              In the near-future, I hope to take this hobby full time by joining
-              an agile team as a React developer where I can combine my 3 years
-              of designing and developing data-intensive business intelligence
-              applications with my passion for front end development. As a
-              self-taught developer with a couple years of personal study (
+              React, Node, and Next. What started as a side-interest has become
+              a serious hobby. I now hope to take this hobby full time by
+              joining an agile team as a React developer where I can combine my
+              3 years of designing and developing data-intensive business
+              intelligence applications with my passion for front end
+              development with React. As a self-taught developer with a couple
+              years of personal study (
               <NextLink href='/projects' passHref>
                 <LinkHighlight>check out my projects</LinkHighlight>
               </NextLink>

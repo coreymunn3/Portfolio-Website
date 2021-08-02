@@ -15,9 +15,22 @@ import { Image } from '@chakra-ui/image';
 import CodeBlock from './CodeBlock';
 import QuoteBlock from './QuoteBlock';
 import LinkHighlight from './LinkHighlight';
+import { useEffect, useState } from 'react';
 
 const BlogPostContents = ({ blogPost }) => {
   const { fields, metadata, sys, readingTime } = blogPost;
+  const [views, setViews] = useState('---');
+
+  useEffect(() => {
+    const incrimentViews = async () => {
+      const res = await fetch(`/api/views/${blogPost.fields.slug}`, {
+        method: 'POST',
+      });
+      const data = await res.json();
+      setViews(data.views);
+    };
+    incrimentViews();
+  }, []);
 
   // custom rich text rendering using contentful packages
   // see: https://www.reddit.com/r/gatsbyjs/comments/hiwqh6/contentful_rich_text_rendering_is_it_worth/
@@ -103,7 +116,10 @@ const BlogPostContents = ({ blogPost }) => {
             year: 'numeric',
           })}
         </Text>
-        <Text>1,000 Views &bull; {readingTime.text}</Text>
+        <Text>
+          {`${views} views `}
+          &bull; {readingTime.text}
+        </Text>
       </Flex>
       <Divider />
       {documentToReactComponents(fields.richTextContent, options)}

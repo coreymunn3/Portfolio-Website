@@ -6,7 +6,7 @@ import { Fragment } from 'react';
 
 const BlogPost = (props) => {
   const { blogPost } = props;
-  console.log(blogPost);
+
   return (
     <Fragment>
       <BlogPostContents blogPost={blogPost} />
@@ -26,8 +26,8 @@ export async function getStaticProps({ params }) {
     content_type: 'blogPost',
     'fields.slug': params.slug,
   });
-
   const blogPost = res.items[0];
+
   // calculate reading time
   const plainText = documentToPlainTextString(blogPost.fields.richTextContent);
   blogPost['readingTime'] = readingTime(plainText);

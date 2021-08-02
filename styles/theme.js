@@ -89,7 +89,7 @@ const overrides = {
         icon: (props) => ({
           color: mode('black', 'white')(props),
           _hover: {
-            color: 'brand.400',
+            color: mode('brand.400', 'brand.200')(props),
           },
         }),
       },

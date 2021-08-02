@@ -26,7 +26,6 @@ import SlideIntoView from './SlideIntoView';
 const Hero = () => {
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   const iconColor = useColorModeValue('#2196F3', '#82c6fb');
-  console.log(iconColor);
   const techSkills = [
     {
       text: (

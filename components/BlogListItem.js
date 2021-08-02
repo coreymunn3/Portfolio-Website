@@ -3,10 +3,11 @@ import { Skeleton } from '@chakra-ui/skeleton';
 import { Image } from '@chakra-ui/image';
 import { useState } from 'react';
 import NextLink from 'next/link';
+import useViews from '../hooks/useViews';
 
 const BlogListItem = ({ blogPost }) => {
-  console.log(blogPost);
   const { fields, sys, meta, readingTime } = blogPost;
+  const { views } = useViews(fields.slug);
   // for image load
   const [isLoading, setIsLoading] = useState(true);
   const handleImageLoad = () => setIsLoading(false);
@@ -27,7 +28,6 @@ const BlogListItem = ({ blogPost }) => {
       </Box>
       <Box flex={1} mb={4}>
         <Stack spacing={0} h='100%'>
-          {/* this heading will have to be a link eventually */}
           <Text
             as='h3'
             variant='lead'
@@ -48,7 +48,7 @@ const BlogListItem = ({ blogPost }) => {
               })}
             </Text>
             <Text fontStyle='italic'>
-              1,000 Views &bull; {readingTime.text}
+              {`${isLoading ? '--- ' : views} views`} &bull; {readingTime.text}
             </Text>
           </Flex>
         </Stack>
