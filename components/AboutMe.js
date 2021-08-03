@@ -19,13 +19,12 @@ const AboutMe = () => {
                 <LinkHighlight>I have spent the last two years</LinkHighlight>
               </NextLink>{' '}
               developing my passion for building beautiful web applications with
-              React, Node, and Next. What started as a side-interest has become
-              a serious hobby. I now hope to take this hobby full time by
-              joining an agile team as a React developer where I can combine my
-              3 years of designing and developing data-intensive business
-              intelligence applications with my passion for front end
-              development with React. As a self-taught developer with a couple
-              years of personal study (
+              React, Node, and Next. I now hope to use the new skills I've
+              gained and take this professional interest full time by joining an
+              agile team as a React developer where I can combine my 3 years of
+              designing and developing data-intensive business intelligence
+              applications with my passion for front end development with React.
+              As a self-taught developer with a couple years of personal study (
               <NextLink href='/projects' passHref>
                 <LinkHighlight>check out my projects</LinkHighlight>
               </NextLink>

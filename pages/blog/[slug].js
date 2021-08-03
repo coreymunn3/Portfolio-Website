@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { createClient } from 'contentful';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import readingTime from 'reading-time';
@@ -9,6 +10,36 @@ const BlogPost = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{blogPost.fields.title}</title>
+        <meta name='description' content={blogPost.fields.desription} />
+        <meta property='og:type' content='website' />
+        {/* <meta
+            property="og:url"
+            content={``}
+          /> */}
+        <meta property='og:title' content={blogPost.fields.title} />
+        <meta property='og:description' content={blogPost.fields.desription} />
+        <meta
+          property='og:image'
+          content={`http:${blogPost.fields.thumbnailImage.fields.file.url}`}
+        />
+
+        <meta property='twitter:card' content='summary_large_image' />
+        {/* <meta
+          property='twitter:url'
+          content={``}
+        /> */}
+        <meta property='twitter:title' content={blogPost.fields.title} />
+        <meta
+          property='twitter:description'
+          content={blogPost.fields.desription}
+        />
+        <meta
+          property='twitter:image'
+          content={`http:${blogPost.fields.thumbnailImage.fields.file.url}`}
+        />
+      </Head>
       <BlogPostContents blogPost={blogPost} />
     </Fragment>
   );
