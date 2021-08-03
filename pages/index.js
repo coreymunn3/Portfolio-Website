@@ -91,5 +91,6 @@ export async function getStaticProps() {
       timelineData: formattedTimelineData,
       projectData: projectContent.items,
     },
+    revalidate: 60,
   };
 }
