@@ -2,6 +2,7 @@ import { Heading, Text, Stack } from '@chakra-ui/layout';
 import TimelineSection from './TimelineSection';
 import SlideIntoView from './SlideIntoView';
 import LinkHighlight from './LinkHighlight';
+import NextLink from 'next/link';
 
 const Timeline = ({ timelineData }) => {
   return (
@@ -12,7 +13,9 @@ const Timeline = ({ timelineData }) => {
         </Heading>
         <Text>
           A quick overview of my recent activities. See{' '}
-          <LinkHighlight>my resume</LinkHighlight> for more depth.
+          <NextLink href='/resume' passHref>
+            <LinkHighlight>my resume</LinkHighlight> for more depth.
+          </NextLink>
         </Text>
 
         {/* create timeline sections for every relevant year */}
