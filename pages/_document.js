@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
-import theme from '../../portfolio-website/styles/theme';
+import theme from '../styles/theme.js';
 
 class MyDocument extends Document {
   render() {
