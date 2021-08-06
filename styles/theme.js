@@ -33,7 +33,7 @@ const overrides = {
     xl: '80em',
   }),
   config: {
-    initialColorMode: 'light',
+    initialColorMode: 'dark',
     useSystemColorMode: false,
   },
   styles: {
