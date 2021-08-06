@@ -50,9 +50,11 @@ const ProjectCard = ({ project }) => {
               <Flex justifyContent='flex-start'>
                 {githubLink && (
                   <Link
+                    aria-label='link to project Github'
                     href={githubLink}
                     variant='icon'
                     isExternal
+                    rel='noreferrer'
                     target='_blank'
                     p={2}
                   >
@@ -61,9 +63,11 @@ const ProjectCard = ({ project }) => {
                 )}
                 {siteLink && (
                   <Link
+                    aria-label='link to live project website'
                     href={siteLink}
                     variant='icon'
                     isExternal
+                    rel='noreferrer'
                     target='_blank'
                     p={2}
                   >

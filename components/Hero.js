@@ -102,7 +102,7 @@ const Hero = () => {
   ];
 
   // order of appearance for items in Hero
-  const introAppearDelay = 1;
+  const introAppearDelay = 0;
   const nameAppearDelay = introAppearDelay + 0.1;
   const typewriterAppearDelay = nameAppearDelay + 0.1;
   const buttonsAppearDelay = typewriterAppearDelay + 0.1;
@@ -184,7 +184,6 @@ const Hero = () => {
         />
 
         <StaggeredGroup
-          as='ul'
           spacing={[2, 4]}
           fontSize={['md', 'lg']}
           staggerInterval={0.2}

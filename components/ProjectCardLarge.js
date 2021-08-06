@@ -80,9 +80,11 @@ const ProjectCardLarge = ({ project }) => {
             <Flex justifyContent='flex-end'>
               {githubLink && (
                 <Link
+                  aria-label='link to project Github'
                   variant='icon'
                   href={githubLink}
                   isExternal
+                  rel='noreferrer'
                   target='_blank'
                   p={2}
                 >
@@ -91,9 +93,11 @@ const ProjectCardLarge = ({ project }) => {
               )}
               {siteLink && (
                 <Link
+                  aria-label='link to live project website'
                   variant='icon'
                   href={siteLink}
                   isExternal
+                  rel='noreferrer'
                   target='_blank'
                   p={2}
                 >

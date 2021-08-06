@@ -62,7 +62,12 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Box cursor='pointer'>
             <NextLink href='/'>
-              <Image src='/images/logo.png' alt='CM' width={['40px', '50px']} />
+              <Image
+                src='/images/logo.png'
+                alt='CM'
+                width={['40px', '50px']}
+                height={['40px', '50px']}
+              />
             </NextLink>
           </Box>
 
@@ -80,7 +85,7 @@ const Navbar = () => {
           ) : (
             <HStack>
               <ColorModeSwitch />
-              <IconButton borderRadius='md'>
+              <IconButton aria-label='menu' borderRadius='md'>
                 <HamburgerIcon
                   fontSize='1.5rem'
                   color={hamburgerColor}
