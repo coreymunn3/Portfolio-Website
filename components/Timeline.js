@@ -14,8 +14,9 @@ const Timeline = ({ timelineData }) => {
         <Text>
           A quick overview of my recent activities. See{' '}
           <NextLink href='/resume' passHref>
-            <LinkHighlight>my resume</LinkHighlight> for more depth.
+            <LinkHighlight>my resume</LinkHighlight>
           </NextLink>
+          for more depth.
         </Text>
 
         {/* create timeline sections for every relevant year */}

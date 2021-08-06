@@ -1,20 +1,26 @@
-import { Stack, Flex, Box, Text } from '@chakra-ui/layout';
+import { Stack, Flex, Box, Text, Heading } from '@chakra-ui/layout';
 import { Skeleton } from '@chakra-ui/skeleton';
 import { Image } from '@chakra-ui/image';
-import { useState } from 'react';
+import SkeletonLoadingImage from './SkeletonLoadingImage';
 import NextLink from 'next/link';
 import useViews from '../hooks/useViews';
 
 const BlogListItem = ({ blogPost }) => {
   const { fields, sys, meta, readingTime } = blogPost;
-  const { views } = useViews(fields.slug);
-  // for image load
-  const [isLoading, setIsLoading] = useState(true);
-  const handleImageLoad = () => setIsLoading(false);
+  const { views, isLoading } = useViews(fields.slug);
+
   return (
     <Flex py={2} direction={['column', 'row']}>
       <Box mr={4} mb={4}>
-        <Skeleton isLoaded={!isLoading}>
+        <SkeletonLoadingImage
+          w={['100%', '200px']}
+          h='150px'
+          src={fields.thumbnailImage.fields.file.url}
+          alt='journey'
+          objectFit='cover'
+          borderRadius='xl'
+        />
+        {/* <Skeleton isLoaded={!isLoading}>
           <Image
             w={['100%', '200px']}
             h='150px'
@@ -24,7 +30,7 @@ const BlogListItem = ({ blogPost }) => {
             onLoad={handleImageLoad}
             borderRadius='xl'
           />
-        </Skeleton>
+        </Skeleton> */}
       </Box>
       <Box flex={1} mb={4}>
         <Stack spacing={0} h='100%'>

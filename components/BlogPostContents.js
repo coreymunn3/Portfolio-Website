@@ -10,11 +10,11 @@ import {
   ListItem,
   Divider,
 } from '@chakra-ui/layout';
-// import { Image } from '@chakra-ui/image';
-import NextImage from 'next/image';
+import { Image } from '@chakra-ui/image';
 import CodeBlock from './CodeBlock';
 import QuoteBlock from './QuoteBlock';
 import LinkHighlight from './LinkHighlight';
+import SkeletonLoadingImage from './SkeletonLoadingImage';
 import { useEffect, useState } from 'react';
 
 const BlogPostContents = ({ blogPost }) => {
@@ -75,18 +75,14 @@ const BlogPostContents = ({ blogPost }) => {
         </UnorderedList>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <Box pt={8} w='100%' h='400px' position='relative'>
-          <NextImage
-            src={'https:' + node.data.target.fields.file.url}
+        <Box pt={16}>
+          <SkeletonLoadingImage
+            src={node.data.target.fields.file.url}
             alt={`${node.data.target.fields.title} - ${node.data.target.fields.description}`}
-            layout='fill'
-            objectFit='cover'
+            borderRadius='lg'
+            w='100%'
+            h='400px'
           />
-          <style jsx global>{`
-            img {
-              border-radius: 5px;
-            }
-          `}</style>
           <Text fontSize='xs' pt={1} textAlign='right'>
             {node.data.target.fields.description}
           </Text>
