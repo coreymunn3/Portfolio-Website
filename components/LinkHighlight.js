@@ -1,5 +1,5 @@
 import { Link } from '@chakra-ui/layout';
-import customTheme from '../styles/theme';
+import customTheme from '../styles/theme.js';
 
 const LinkHighlight = ({ children, ...otherProps }) => {
   return (
