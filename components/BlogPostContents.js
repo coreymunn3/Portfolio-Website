@@ -18,7 +18,6 @@ import LinkHighlight from './LinkHighlight';
 import { useEffect, useState } from 'react';
 
 const BlogPostContents = ({ blogPost }) => {
-  console.log(blogPost);
   const { fields, metadata, sys, readingTime } = blogPost;
   const [views, setViews] = useState('---');
 
