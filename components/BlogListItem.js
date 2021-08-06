@@ -1,4 +1,4 @@
-import { Stack, Flex, Box, Text, Heading } from '@chakra-ui/layout';
+import { Stack, Flex, Box, Text } from '@chakra-ui/layout';
 import { Skeleton } from '@chakra-ui/skeleton';
 import { Image } from '@chakra-ui/image';
 import { useState } from 'react';

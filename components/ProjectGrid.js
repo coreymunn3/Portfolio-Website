@@ -1,4 +1,4 @@
-import { Grid, GridItem, Box, Heading, Text } from '@chakra-ui/react';
+import { Grid, GridItem, Box, Heading, Text } from '@chakra-ui/layout';
 import ProjectCard from './ProjectCard';
 import SlideIntoView from './SlideIntoView';
 import ProjectsSVG from './svg/ProjectsSVG';

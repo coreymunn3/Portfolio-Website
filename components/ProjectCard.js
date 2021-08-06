@@ -4,10 +4,10 @@ import {
   Box,
   Heading,
   Text,
-  Tag,
   Divider,
   Link,
-} from '@chakra-ui/react';
+} from '@chakra-ui/layout';
+import { Tag } from '@chakra-ui/tag';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import NextImage from 'next/image';
 

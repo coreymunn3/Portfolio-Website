@@ -1,20 +1,17 @@
+import { Box, Flex, HStack, VStack, Container } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import { IconButton } from '@chakra-ui/button';
+import { Image } from '@chakra-ui/image';
 import {
-  Box,
-  Flex,
-  Image,
-  Button,
-  HStack,
-  VStack,
-  Container,
-  IconButton,
   Drawer,
   DrawerBody,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/react';
-import { useMediaQuery, useColorModeValue } from '@chakra-ui/react';
+} from '@chakra-ui/modal';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 import { useState } from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';

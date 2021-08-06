@@ -5,10 +5,10 @@ import {
   Center,
   Heading,
   Text,
-  Image,
-  Tag,
   Link,
-} from '@chakra-ui/react';
+} from '@chakra-ui/layout';
+import { Image } from '@chakra-ui/image';
+import { Tag } from '@chakra-ui/tag';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import FeaturedProjectSVG from './svg/FeaturedProjectSVG';
 import { useState } from 'react';

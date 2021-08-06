@@ -1,5 +1,4 @@
-import { Stack, Divider, Text } from '@chakra-ui/react';
-import { Fragment } from 'react';
+import { Stack, Divider, Text } from '@chakra-ui/layout';
 import TimelineSectionEvent from './TimelineSectionEvent';
 
 const TimelineSection = ({ year, timelineEvents }) => {

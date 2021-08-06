@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
-import { Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/layout';
 import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import Timeline from '../components/Timeline';

@@ -1,14 +1,7 @@
-import {
-  Stack,
-  HStack,
-  Text,
-  Heading,
-  Button,
-  Box,
-  Flex,
-  useMediaQuery,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Stack, HStack, Text, Heading, Box, Flex } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import { useColorModeValue } from '@chakra-ui/color-mode';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import {

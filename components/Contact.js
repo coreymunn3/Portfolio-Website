@@ -1,12 +1,6 @@
-import {
-  Stack,
-  Box,
-  HStack,
-  Heading,
-  Text,
-  Button,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Stack, Box, HStack, Heading, Text } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import { useMediaQuery } from '@chakra-ui/media-query';
 import SlideIntoView from './SlideIntoView';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { EmailIcon } from '@chakra-ui/icons';

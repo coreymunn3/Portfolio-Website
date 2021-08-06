@@ -1,4 +1,4 @@
-import { Heading, Text, Link, Stack } from '@chakra-ui/react';
+import { Heading, Text, Stack } from '@chakra-ui/layout';
 import TimelineSection from './TimelineSection';
 import SlideIntoView from './SlideIntoView';
 import LinkHighlight from './LinkHighlight';

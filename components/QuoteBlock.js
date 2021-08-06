@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/layout';
+import { Box } from '@chakra-ui/layout';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 const QuoteBlock = ({ children }) => {

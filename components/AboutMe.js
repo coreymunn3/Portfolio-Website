@@ -1,4 +1,4 @@
-import { Box, Flex, Stack, Heading, Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Stack, Heading, Text } from '@chakra-ui/layout';
 import SlideIntoView from './SlideIntoView';
 import NextLink from 'next/link';
 import LinkHighlight from './LinkHighlight';

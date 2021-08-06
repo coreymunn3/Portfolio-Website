@@ -1,4 +1,4 @@
-import { Stack, Box } from '@chakra-ui/react';
+import { Stack, Box } from '@chakra-ui/layout';
 import { motion } from 'framer-motion';
 
 const StagGroup = motion(Stack);

@@ -1,12 +1,8 @@
 import Head from 'next/head';
-import {
-  Stack,
-  Heading,
-  Text,
-  Image,
-  Button,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Stack, Heading, Text } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import { useMediaQuery } from '@chakra-ui/media-query';
+import { Image } from '@chakra-ui/image';
 import { Fragment } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { createClient } from 'contentful';

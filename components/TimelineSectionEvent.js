@@ -1,4 +1,4 @@
-import { Stack, Flex, Text, Box } from '@chakra-ui/react';
+import { Stack, Flex, Text, Box } from '@chakra-ui/layout';
 import SlideIntoView from './SlideIntoView';
 import { IoBriefcase, IoSchool } from 'react-icons/io5';
 import { FaCode } from 'react-icons/fa';

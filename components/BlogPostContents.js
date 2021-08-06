@@ -8,7 +8,6 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  Link,
   Divider,
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
@@ -36,7 +35,11 @@ const BlogPostContents = ({ blogPost }) => {
   // see: https://www.reddit.com/r/gatsbyjs/comments/hiwqh6/contentful_rich_text_rendering_is_it_worth/
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text) => <Text as='strong'>{text}</Text>,
+      [MARKS.BOLD]: (text) => (
+        <Text as='strong' fontWeight='bold'>
+          {text}
+        </Text>
+      ),
       [MARKS.ITALIC]: (text) => <Text as='em'>{text}</Text>,
       [MARKS.UNDERLINE]: (text) => <Text as='u'>{text}</Text>,
       [MARKS.CODE]: (text) => (
@@ -50,19 +53,15 @@ const BlogPostContents = ({ blogPost }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text as='span'>{children}</Text>,
       [BLOCKS.HEADING_3]: (node, children) => (
-        <Heading as='h3' variant='subtitle1' pt={8}>
+        <Heading as='h3' variant='subtitle1'>
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_4]: (node, children) => (
-        <Heading as='h4' pt={8}>
-          {children}
-        </Heading>
+        <Heading as='h4'>{children}</Heading>
       ),
       [BLOCKS.HEADING_5]: (node, children) => (
-        <Heading as='h5' pt={8}>
-          {children}
-        </Heading>
+        <Heading as='h5'>{children}</Heading>
       ),
       [BLOCKS.HEADING_6]: (node, children) => (
         <Text as='h6' variant='lead' fontSize='lg'>
@@ -75,13 +74,13 @@ const BlogPostContents = ({ blogPost }) => {
         </UnorderedList>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <Box pb={8}>
+        <Box pt={8}>
           <Image
             src={node.data.target.fields.file.url}
             alt={`${node.data.target.fields.title} - ${node.data.target.fields.description}`}
             borderRadius='xl'
           />
-          <Text fontSize='sm' pt={1}>
+          <Text fontSize='xs' pt={1} textAlign='right'>
             {node.data.target.fields.description}
           </Text>
         </Box>

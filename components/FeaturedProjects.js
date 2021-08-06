@@ -1,12 +1,5 @@
-import {
-  Stack,
-  Box,
-  Heading,
-  Text,
-  Link,
-  Divider,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Stack, Heading, Text, Divider } from '@chakra-ui/layout';
+import { useMediaQuery } from '@chakra-ui/media-query';
 import { useState, useEffect } from 'react';
 import SlideIntoView from './SlideIntoView';
 import ProjectCard from './ProjectCard';
@@ -16,7 +9,6 @@ import LinkHighlight from './LinkHighlight';
 const FeaturedProjects = ({ projects }) => {
   // SSR Workaround for chakra useMediaQuery bug
   // https://github.com/chakra-ui/chakra-ui/issues/3124
-  console.log(projects);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
   useEffect(() => {
