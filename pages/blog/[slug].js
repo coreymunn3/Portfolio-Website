@@ -14,10 +14,10 @@ const BlogPost = (props) => {
         <title>{blogPost.fields.title}</title>
         <meta name='description' content={blogPost.fields.desription} />
         <meta property='og:type' content='website' />
-        {/* <meta
-            property="og:url"
-            content={``}
-          /> */}
+        <meta
+          property='og:url'
+          content={`https://coreymunn.dev/blog/${blogPost.fields.slug}`}
+        />
         <meta property='og:title' content={blogPost.fields.title} />
         <meta property='og:description' content={blogPost.fields.desription} />
         <meta
@@ -26,10 +26,10 @@ const BlogPost = (props) => {
         />
 
         <meta property='twitter:card' content='summary_large_image' />
-        {/* <meta
+        <meta
           property='twitter:url'
-          content={``}
-        /> */}
+          content={`https://coreymunn.dev/blog/${blogPost.fields.slug}`}
+        />
         <meta property='twitter:title' content={blogPost.fields.title} />
         <meta
           property='twitter:description'

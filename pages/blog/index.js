@@ -21,22 +21,25 @@ const Blog = (props) => {
           content='corey munn, corey munn website, corey munn portfolio, corey munn projects, corey munn blog'
         />
         <meta property='og:type' content='website' />
-        {/* <meta property='og:url' content='https://coreymunn.io/.projects' /> */}
+        <meta property='og:url' content='https://coreymunn.dev/blog' />
         <meta property='og:title' content='Corey Munn | Blog' />
         <meta
           property='og:description'
           content='Corey Munn is an experienced developer building beautiful web applications with React, NextJS, and Node. Read about my experiences.'
         />
-        <meta property='og:image' content='https://imgur.com/a/mdAGLao' />
+        <meta property='og:image' content='https://i.imgur.com/MfuCQqf.png' />
 
         <meta property='twitter:card' content='summary_large_image' />
-        {/* <meta property='twitter:url' content='https://coreymunn.io/' /> */}
+        <meta property='twitter:url' content='https://coreymunn.dev/blog' />
         <meta property='twitter:title' content='Corey Munn | Blog' />
         <meta
           property='twitter:description'
           content='Corey Munn is an experienced developer building beautiful web applications with React, NextJS, and Node. Read about my experiences.'
         />
-        <meta property='twitter:image' content='https://imgur.com/a/mdAGLao' />
+        <meta
+          property='twitter:image'
+          content='https://i.imgur.com/MfuCQqf.png'
+        />
       </Head>
       <Stack spacing={4}>
         <Heading variant='title'>Blog</Heading>
