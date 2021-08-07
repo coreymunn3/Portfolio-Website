@@ -81,7 +81,8 @@ const BlogPostContents = ({ blogPost }) => {
             alt={`${node.data.target.fields.title} - ${node.data.target.fields.description}`}
             borderRadius='lg'
             w='100%'
-            h='400px'
+            h={['200px', '400px']}
+            objectFit='cover'
           />
           <Text fontSize='xs' pt={1} textAlign='right'>
             {node.data.target.fields.description}
