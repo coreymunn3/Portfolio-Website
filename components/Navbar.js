@@ -73,13 +73,14 @@ const Navbar = () => {
 
           {isLargerThan768 ? (
             <HStack>
-              <StaggeredGroup
+              {/* <StaggeredGroup
                 direction='row'
                 staggerInterval={0.2}
                 childAnimationDuration={1}
                 delay={0.3}
                 items={navLinkItems}
-              />
+              /> */}
+              {navLinkItems}
               <ColorModeSwitch />
             </HStack>
           ) : (
@@ -114,18 +115,14 @@ const Navbar = () => {
                   justifyContent='space-between'
                 >
                   <VStack>
-                    <StaggeredGroup
+                    {/* <StaggeredGroup
                       direction='column'
                       staggerInterval={0.2}
                       childAnimationDuration={1}
                       items={navLinkItems}
-                    />
+                    /> */}
+                    {navLinkItems}
                   </VStack>
-                  <Box>
-                    <Button variant='link' fontWeight='light' w='100%'>
-                      Get In Touch
-                    </Button>
-                  </Box>
                 </Flex>
               </DrawerBody>
             </DrawerContent>

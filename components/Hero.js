@@ -106,7 +106,7 @@ const Hero = () => {
   const nameAppearDelay = introAppearDelay + 0.1;
   const typewriterAppearDelay = nameAppearDelay + 0.1;
   const buttonsAppearDelay = typewriterAppearDelay + 0.1;
-  const skillsAppearDelay = buttonsAppearDelay + 0.5;
+  const skillsAppearDelay = buttonsAppearDelay;
   const appearanceDuration = 0.4;
 
   return (
@@ -177,18 +177,18 @@ const Hero = () => {
 
         <StaggeredGroup
           direction='row'
-          staggerInterval={0.2}
+          staggerInterval={0.1}
           delay={buttonsAppearDelay}
-          childAnimationDuration={0.5}
+          childAnimationDuration={0.3}
           items={contactButtonGroupItems}
         />
 
         <StaggeredGroup
           spacing={[2, 4]}
           fontSize={['md', 'lg']}
-          staggerInterval={0.2}
+          staggerInterval={0.1}
           delay={skillsAppearDelay}
-          childAnimationDuration={1}
+          childAnimationDuration={0.3}
           items={techSkillsGroupItems}
         />
       </Stack>

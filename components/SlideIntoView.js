@@ -16,7 +16,7 @@ const SlideIntoView = ({
   });
 
   const DEFAULT_DURATION = 0.3;
-  const DEFAULT_DELAY = 0.3;
+  const DEFAULT_DELAY = 0;
 
   useEffect(() => {
     if (inView) {
