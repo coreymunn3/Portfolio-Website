@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/button';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import { EmailIcon } from '@chakra-ui/icons';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFilePdf } from 'react-icons/fa';
 import {
   SiNextDotJs,
   SiTypescript,
@@ -69,6 +69,16 @@ const Hero = () => {
   ));
 
   const contactButtonGroupItems = [
+    <Button
+      as='a'
+      href='/resume'
+      leftIcon={<FaFilePdf />}
+      variant='solid'
+      colorScheme='brand'
+      size={isLargerThan768 ? 'md' : 'sm'}
+    >
+      Resume
+    </Button>,
     <Button
       as='a'
       href='mailto:coreymunn3@gmail.com'
