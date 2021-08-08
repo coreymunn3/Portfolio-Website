@@ -75,7 +75,15 @@ const ProjectCardLarge = ({ project }) => {
         <Stack p={2}>
           <Flex direction='column' alignItems='flex-end'>
             <Heading flex={1} textAlign='right' variant='subtitle2'>
-              {title}
+              <Link
+                href={siteLink}
+                isExternal
+                rel='noreferrer'
+                target='_blank'
+                aria-label='link to live project website'
+              >
+                {title}
+              </Link>
             </Heading>
             <Flex justifyContent='flex-end'>
               {githubLink && (

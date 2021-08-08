@@ -45,7 +45,16 @@ const ProjectCard = ({ project }) => {
           <Stack p={2}>
             <Flex direction='row' alignItems='center'>
               <Heading flex={1} textAlign='left' variant='subtitle2'>
-                {title}
+                <Link
+                  textDecor='underline'
+                  href={siteLink}
+                  isExternal
+                  rel='noreferrer'
+                  target='_blank'
+                  aria-label='link to live project website'
+                >
+                  {title}
+                </Link>
               </Heading>
               <Flex justifyContent='flex-start'>
                 {githubLink && (
