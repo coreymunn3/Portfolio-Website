@@ -99,16 +99,16 @@ const Hero = () => {
     >
       Github
     </Button>,
-    <Button
-      as='a'
-      href='https://www.linkedin.com/in/michael-munn-73228958/'
-      target='_blank'
-      leftIcon={<FaLinkedin />}
-      variant='solid'
-      size={isLargerThan768 ? 'md' : 'sm'}
-    >
-      LinkedIn
-    </Button>,
+    // <Button
+    //   as='a'
+    //   href='https://www.linkedin.com/in/michael-munn-73228958/'
+    //   target='_blank'
+    //   leftIcon={<FaLinkedin />}
+    //   variant='solid'
+    //   size={isLargerThan768 ? 'md' : 'sm'}
+    // >
+    //   LinkedIn
+    // </Button>,
   ];
 
   // order of appearance for items in Hero
@@ -187,6 +187,7 @@ const Hero = () => {
 
         <StaggeredGroup
           direction='row'
+          flexWrap='wrap'
           staggerInterval={0.1}
           delay={buttonsAppearDelay}
           childAnimationDuration={0.3}

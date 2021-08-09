@@ -36,7 +36,13 @@ const Navbar = () => {
 
   let navLinkItems = navLinks.map((navLink) => (
     <NextLink key={navLink} href={`/${navLink}`} passHref>
-      <Button as='a' variant='ghost' fontWeight='light' onClick={handleClose}>
+      <Button
+        as='a'
+        variant='ghost'
+        colorScheme='brand'
+        fontWeight='light'
+        onClick={handleClose}
+      >
         {navLink[0].toUpperCase() + navLink.substring(1)}
       </Button>
     </NextLink>

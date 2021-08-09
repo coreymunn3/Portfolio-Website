@@ -11,7 +11,14 @@ const AboutMe = () => {
           <Stack maxW={['100%', '50%']} spacing={4}>
             <Heading variant='subtitle1'>About Me</Heading>
             <Text as='span'>
-              I am an experienced Data Visualization Consultant and{' '}
+              I am an experienced{' '}
+              <LinkHighlight
+                href='https://www.linkedin.com/in/michael-munn-73228958/'
+                target='_blank'
+              >
+                Data Visualization Consultant
+              </LinkHighlight>{' '}
+              and{' '}
               <NextLink
                 href='/blog/my-two-year-journey-learning-web-development-while-working-full-time'
                 passHref
