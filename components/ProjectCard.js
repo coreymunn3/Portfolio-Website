@@ -16,6 +16,7 @@ const ProjectCard = ({ project }) => {
     githubLink,
     siteLink,
     isFeaturedProject,
+    coldStartWarning,
     title,
     description,
     previewImage,
@@ -88,7 +89,13 @@ const ProjectCard = ({ project }) => {
             <Stack>
               <Flex flexWrap='wrap'>{Tags}</Flex>
               <Divider />
-              <Text>{description}</Text>
+              <Text variant='lead'>{description}</Text>
+              {coldStartWarning && (
+                <Text fontStyle='italic'>
+                  ** This project is hosted on a Server that has to cold start.
+                  Please allow up to 30 seconds to allow the server to boot up.
+                </Text>
+              )}
             </Stack>
           </Stack>
         </Box>
