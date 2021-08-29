@@ -58,6 +58,7 @@ export async function getStaticProps({ params }) {
     'fields.slug': params.slug,
   });
   const blogPost = res.items[0];
+  // console.log(blogPost);
 
   // calculate reading time
   const plainText = documentToPlainTextString(blogPost.fields.richTextContent);
@@ -75,11 +76,12 @@ export async function getStaticPaths() {
   let res = await client.getEntries({
     content_type: 'blogPost',
   });
+  // console.log(res.items);
 
   return {
     paths: res.items.map((item) => ({
       params: { slug: item.fields.slug },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
