@@ -23,7 +23,7 @@ export default function Home(props) {
         />
         <meta
           name='keywords'
-          content='corey munn, corey munn website, corey munn portfolio, corey munn projects, corey munn blog'
+          content='corey munn, Corey Munn, COREY MUNN, corey munn website, corey munn portfolio, corey munn projects, corey munn blog, corey munn react'
         />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://coreymunn.dev' />
